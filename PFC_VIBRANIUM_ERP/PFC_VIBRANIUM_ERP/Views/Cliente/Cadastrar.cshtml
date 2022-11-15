@@ -1,0 +1,51 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Cadastrar Cliente";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Cadastrar Cliente</h1>
+
+</div>
+
+<form asp-controller="Cliente" asp-action="Cadastrar" method="post">
+    <div class="form-group">
+        <label for="nome">Nome do Cliente</label>
+        <input type="text" asp-for="nome" class ="form-control" placeholder="Digite o nome do cliente">
+        @Html.ValidationMessageFor(x => x.nome) 
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" asp-for="email" class="form-control" placeholder="Digite o e-mail do cliente">
+        @Html.ValidationMessageFor(x => x.email)
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" asp-for="telefone" class="form-control" placeholder="Digite o telefone do cliente">
+        @Html.ValidationMessageFor(x => x.telefone)
+    </div>
+    <div class="form-group">
+        <label for="veiculo">Veículo</label>
+        <input type="text" asp-for="veiculo" class="form-control" placeholder="Digite qual o tipo de veículo">
+        @Html.ValidationMessageFor(x => x.veiculo)
+    </div>
+    <div class="form-group">
+        <label for="placa">Placa do Veículo</label>
+        <input type="text" asp-for="placa" class="form-control" placeholder="Digite qual a placa do veículo">
+        @Html.ValidationMessageFor(x => x.placa)
+    </div>
+    <div class="form-group">
+        <label for="modelo">Modelo do Veículo</label>
+        <input type="text" asp-for="modelo" class="form-control" placeholder="Digite o modelo do veículo">
+        @Html.ValidationMessageFor(x => x.modelo)
+    </div>
+    <div class="form-group">
+        <label for="cor">Cor do Veículo</label>
+        <input type="text" asp-for="cor" class="form-control" placeholder="Digite a cor do veículo">
+        @Html.ValidationMessageFor(x => x.cor)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Cliente" asp-action="Index" role="button">Voltar</a>
+</form>

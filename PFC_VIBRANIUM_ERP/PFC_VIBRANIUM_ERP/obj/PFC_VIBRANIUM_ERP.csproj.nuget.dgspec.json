@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\yutak\\Source\\Repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj": {}
+    "D:\\Users\\yutak\\source\\repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj": {}
   },
   "projects": {
-    "D:\\Users\\yutak\\Source\\Repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj": {
+    "D:\\Users\\yutak\\source\\repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\yutak\\Source\\Repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj",
+        "projectUniqueName": "D:\\Users\\yutak\\source\\repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj",
         "projectName": "PFC_VIBRANIUM_ERP",
-        "projectPath": "D:\\Users\\yutak\\Source\\Repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj",
+        "projectPath": "D:\\Users\\yutak\\source\\repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP.csproj",
         "packagesPath": "C:\\Users\\yutak\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\yutak\\Source\\Repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\obj\\",
+        "outputPath": "D:\\Users\\yutak\\source\\repos\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\PFC_VIBRANIUM_ERP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yutak\\AppData\\Roaming\\NuGet\\NuGet.Config",

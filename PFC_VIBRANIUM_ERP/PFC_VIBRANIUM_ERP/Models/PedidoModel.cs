@@ -1,36 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace PFC_VIBRANIUM_ERP.Models
 {
-    public class FuncionarioModel
+    public class PedidoModel
     {
-        public int id{ get; set; }
+        public int idPed { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public string nomeFuncionario { get; set; }
+        public string tipo { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public DateTime dtAdmissao { get; set; }
+        public string produtos { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public DateTime dtTermino { get; set; }
+        public DateTime dtPedido { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public DateTime dtDesligamento { get; set; }
+        public int quantidade { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public string cargo { get; set; }
+        public double valor { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public double salario { get; set; }
+        public string status { get; set; }
+        [Required(ErrorMessage = "Favor insira a informação")]
+
+        public int idCli { get; set; }
+        [Required(ErrorMessage = "Favor insira a informação")]
+
+        public int idForn { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
         //Endereço
-
         public string descricao { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
@@ -54,18 +59,5 @@ namespace PFC_VIBRANIUM_ERP.Models
 
         public string email { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-
-        //Financeiro
-        public string pagamento { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string banco { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string agencia { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string conta { get; set; }
     }
 }

@@ -70,8 +70,6 @@ namespace PFC_VIBRANIUM_ERP.Models
         [Required(ErrorMessage = "Favor insira a informação")]
 
         public string conta { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
 
-        public string cor { get; set; }
     }
 }

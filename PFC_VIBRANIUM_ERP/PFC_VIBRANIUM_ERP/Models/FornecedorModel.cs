@@ -58,7 +58,7 @@ namespace PFC_VIBRANIUM_ERP.Models
 
 
         //Financeiro
-        public string recebimento { get; set; }
+        public string pagamento { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
         public string banco { get; set; }

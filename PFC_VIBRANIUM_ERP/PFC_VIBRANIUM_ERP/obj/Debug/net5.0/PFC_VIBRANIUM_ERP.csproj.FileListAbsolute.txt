@@ -60,3 +60,14 @@ C:\Users\Emanuel Vitor\Documents\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\n
 C:\Users\Emanuel Vitor\Documents\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.dll
 C:\Users\Emanuel Vitor\Documents\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\refint\PFC_VIBRANIUM_ERP.dll
 C:\Users\Emanuel Vitor\Documents\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.pdb
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.csproj.AssemblyReference.cache
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.AssemblyInfoInputs.cache
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.AssemblyInfo.cs
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.csproj.CoreCompileInputs.cache
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.MvcApplicationPartsAssemblyInfo.cache
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.RazorAssemblyInfo.cache
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.RazorAssemblyInfo.cs
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.dll
+D:\Users\yutak\Source\Repos\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net5.0\PFC_VIBRANIUM_ERP.pdb

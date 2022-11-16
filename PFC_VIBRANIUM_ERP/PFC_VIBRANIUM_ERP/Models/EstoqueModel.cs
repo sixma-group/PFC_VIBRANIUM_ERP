@@ -14,7 +14,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string nome { get; set; }
         [Required(ErrorMessage = "Favor informe o nome")]
 
-        public string preco { get; set; }
+        public double preco { get; set; }
         [Required(ErrorMessage = "Favor informe o preço")]
 
         public string marca { get; set; }
@@ -23,7 +23,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string descricao { get; set; }
         [Required(ErrorMessage = "Favor informe a descrição")]
 
-        public string quantidade { get; set; }
+        public int quantidade { get; set; }
         
     }
 }

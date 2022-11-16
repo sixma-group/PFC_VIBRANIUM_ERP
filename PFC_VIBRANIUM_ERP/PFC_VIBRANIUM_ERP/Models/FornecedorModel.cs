@@ -24,7 +24,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string pessoa { get; set; }
         [Required(ErrorMessage = "Favor informe o tipo da pessoa (Jurídica ou Física)")]
 
-        public string idfederal { get; set; }
+        public int idfederal { get; set; }
         [Required(ErrorMessage = "Favor informe o CPF ou CNPJ")]
 
         public string abrev { get; set; }
@@ -38,7 +38,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string cep { get; set; }
         [Required(ErrorMessage = "Favor informe o CEP")]
 
-        public string numero { get; set; }
+        public int numero { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
         public string bairro { get; set; }

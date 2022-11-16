@@ -13,7 +13,6 @@ namespace PFC_VIBRANIUM_ERP.Models
         [Required(ErrorMessage = "Favor insira a informação")]
         public string nome { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-        [EmailAddress(ErrorMessage = "Favor inserir um email valido")]
 
         public string pais { get; set; }
         [Required(ErrorMessage = "Favor informe o país")]
@@ -40,7 +39,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string cep { get; set; }
         [Required(ErrorMessage = "Favor informe o CEP")]
 
-        public string numero { get; set; }
+        public int numero { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
         public string bairro { get; set; }

@@ -11,16 +11,16 @@ namespace PFC_VIBRANIUM_ERP.Models
         public int id { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public int nome { get; set; }
+        public string nome { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public int login { get; set; }
+        public string login { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public int senha { get; set; }
+        public string senha { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public int nivel { get; set; }
+        public string nivel { get; set; }
         
     }
 }

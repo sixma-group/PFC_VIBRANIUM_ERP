@@ -18,13 +18,24 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
+                <th scope="col">País</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Tipo Pessoa</th>
+                <th scope="col">Federal</th>
+                <th scope="col">Nome Abreviado</th>
+
+                <th scope="col">CEP</th>
+                <th scope="col">Número</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Contato</th>
                 <th scope="col">Telefone</th>
-                <th scope="col">Veículo</th>
-                <th scope="col">Placa</th>
-                <th scope="col">Modelo</th>
-                <th scope="col">Cor</th>
-                <th scope="col"></th>
+                <th scope="col">Email</th>
+
+                <th scope="col">Recebidos</th>
+                <th scope="col">Banco</th>
+                <th scope="col">Agencia</th>
+                <th scope="col">Conta</th>
             </tr>
         </thead>
         <tbody>
@@ -32,22 +43,36 @@
             {
                 foreach (ClienteModel cliente in Model)
                 {
-                    <tr>
-                        <th scope="row">@cliente.id</th>
-                        <td>@cliente.nome</td>
-                        <td>@cliente.email</td>
-                        <td>@cliente.telefone</td>
-                        <td>@cliente.veiculo</td>
-                        <td>@cliente.placa</td>
-                        <td>@cliente.modelo</td>
-                        <td>@cliente.cor</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-primary" asp-route-id="@cliente.id" asp-controller="Cliente" asp-action="Alterar">Alterar</a>
-                                <a role="button" class="btn btn-danger" asp-route-id="@cliente.id" asp-controller="Cliente" asp-action="Excluir">Excluir</a>
-                            </div>
-                        </td>
-                    </tr>
+            <tr>
+                <th scope="row">@cliente.idCli</th>
+                <td>@cliente.nome</td>
+                <td>@cliente.pais</td>
+                <td>@cliente.estado</td>
+                <td>@cliente.pessoa</td>
+                <td>@cliente.idfederal</td>
+                <td>@cliente.abrev</td>
+
+                <td>@cliente.descricao</td>
+                <td>@cliente.cep</td>
+                <td>@cliente.numero</td>
+                <td>@cliente.bairro</td>
+                <td>@cliente.cidade</td>
+                <td>@cliente.contato</td>
+                <td>@cliente.telefone</td>
+                <td>@cliente.email</td>
+
+                <td>@cliente.recebimento</td>
+                <td>@cliente.banco</td>
+                <td>@cliente.agencia</td>
+                <td>@cliente.conta</td>
+
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Alterar">Alterar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Excluir">Excluir</a>
+                    </div>
+                </td>
+            </tr>
                 }
             }
         </tbody>

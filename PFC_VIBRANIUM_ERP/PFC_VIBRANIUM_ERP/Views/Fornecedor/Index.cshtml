@@ -41,35 +41,35 @@
         <tbody>
             @if (Model != null && Model.Any())
             {
-                foreach (FornecedorModel cliente in Model)
+                foreach (FornecedorModel fornecedor in Model)
                 {
                     <tr>
-                        <th scope="row">@cliente.idForn</th>
-                        <td>@cliente.nomefornecedor</td>
-                        <td>@cliente.pais</td>
-                        <td>@cliente.estado</td>
-                        <td>@cliente.pessoa</td>
-                        <td>@cliente.idfederal</td>
-                        <td>@cliente.abrev</td>
+                        <th scope="row">@fornecedor.idForn</th>
+                        <td>@fornecedor.nomefornecedor</td>
+                        <td>@fornecedor.pais</td>
+                        <td>@fornecedor.estado</td>
+                        <td>@fornecedor.pessoa</td>
+                        <td>@fornecedor.idfederal</td>
+                        <td>@fornecedor.abrev</td>
 
-                        <td>@cliente.descricao</td>
-                        <td>@cliente.cep</td>
-                        <td>@cliente.numero</td>
-                        <td>@cliente.bairro</td>
-                        <td>@cliente.cidade</td>
-                        <td>@cliente.contato</td>
-                        <td>@cliente.telefone</td>
-                        <td>@cliente.email</td>
+                        <td>@fornecedor.descricao</td>
+                        <td>@fornecedor.cep</td>
+                        <td>@fornecedor.numero</td>
+                        <td>@fornecedor.bairro</td>
+                        <td>@fornecedor.cidade</td>
+                        <td>@fornecedor.contato</td>
+                        <td>@fornecedor.telefone</td>
+                        <td>@fornecedor.email</td>
 
-                        <td>@cliente.pagamento</td>
-                        <td>@cliente.banco</td>
-                        <td>@cliente.agencia</td>
-                        <td>@cliente.conta</td>
+                        <td>@fornecedor.pagamento</td>
+                        <td>@fornecedor.banco</td>
+                        <td>@fornecedor.agencia</td>
+                        <td>@fornecedor.conta</td>
 
                         <td>
                             <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-primary" asp-route-id="@cliente.idForn" asp-controller="Fornecedor" asp-action="Alterar">Alterar</a>
-                                <a role="button" class="btn btn-danger" asp-route-id="@cliente.idForn" asp-controller="Fornecedor" asp-action="Excluir">Excluir</a>
+                                <a role="button" class="btn btn-primary" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Alterar">Alterar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Excluir">Excluir</a>
                             </div>
                         </td>
                     </tr>

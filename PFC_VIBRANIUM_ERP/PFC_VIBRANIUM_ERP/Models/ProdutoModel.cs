@@ -26,7 +26,7 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string descricao { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
-        public double precoEstoque { get; set; }
+        public double aquisicao { get; set; }
         
     }
 }

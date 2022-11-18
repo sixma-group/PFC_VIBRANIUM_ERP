@@ -1,0 +1,51 @@
+﻿@model ProdutoModel
+@{
+    ViewData["Title"] = "Alterar Produto";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Alterar dados do Produto</h1>
+
+</div>
+
+<form asp-controller="Produto" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
+    <div class="form-group">
+        <label for="nome">Nome do Produto</label>
+        <input type="text" asp-for="nome" class="form-control" placeholder="Digite o nome do produto">
+        @Html.ValidationMessageFor(x => x.nome)
+    </div>
+    <div class="form-group">
+        <label for="preco">Preço</label>
+        <input type="text" asp-for="preco" class="form-control" placeholder="Digite o preço da venda">
+        @Html.ValidationMessageFor(x => x.preco)
+    </div>
+    <div class="form-group">
+        <label for="item">Itens Empenhados</label>
+        <input type="text" asp-for="item" class="form-control" >
+        @Html.ValidationMessageFor(x => x.item)
+    </div>
+    <div class="form-group">
+        <label for="estoque">Estoque</label>
+        <input type="text" asp-for="estoque" class="form-control">
+        @Html.ValidationMessageFor(x => x.estoque)
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descricao</label>
+        <input type="text" asp-for="descricao" class="form-control" placeholder="Digite a descrição">
+        @Html.ValidationMessageFor(x => x.descricao)
+    </div>
+    <div class="form-group">
+        <label for="aquisicao">Aquisição</label>
+        <input type="text" asp-for="aquisicao" class="form-control" placeholder="Digite o produto adquirido">
+        @Html.ValidationMessageFor(x => x.aquisicao)
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Produto" asp-action="Index" role="button">Voltar</a>
+</form>
+

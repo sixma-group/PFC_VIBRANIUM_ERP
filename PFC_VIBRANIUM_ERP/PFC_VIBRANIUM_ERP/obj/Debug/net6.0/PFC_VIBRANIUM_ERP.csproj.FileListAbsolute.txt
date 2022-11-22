@@ -1,9 +1,0 @@
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.csproj.AssemblyReference.cache
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.AssemblyInfoInputs.cache
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.AssemblyInfo.cs
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.csproj.CoreCompileInputs.cache
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.RazorAssemblyInfo.cache
-C:\Users\Emanuel Vitor\Documents\GitHub\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\PFC_VIBRANIUM_ERP\obj\Debug\net6.0\PFC_VIBRANIUM_ERP.RazorAssemblyInfo.cs

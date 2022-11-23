@@ -1,15 +1,18 @@
-﻿@model AcrModel
+﻿@model CAPModel
 @{
-    ViewData["Title"] = "Cadastrar registro Contas a Receber";
+    ViewData["Title"] = "Alterar registros Contas a Pagar";
 }
 
 <div class="text-center">
 
-    <h1 class="display-4"> Cadastrar Registro</h1>
+    <h1 class="display-4"> Alterar Registros</h1>
 
 </div>
 
-<form asp-controller="ACR" asp-action="Cadastrar" method="post">
+<form asp-controller="Administrativo" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
     <div class="form-group">
         <label for="dtTransacao">Data da Transação</label>
         <input type="datetime" asp-for="dtTransacao" class="form-control">
@@ -31,9 +34,9 @@
         @Html.ValidationMessageFor(x => x.titulo)
     </div>
     <div class="form-group">
-        <label for="valorTitulo">Valor do Título</label>
-        <input type="text" asp-for="valorTitulo" class="form-control">
-        @Html.ValidationMessageFor(x => x.valorTitulo)
+        <label for="valor">Valor</label>
+        <input type="text" asp-for="valor" class="form-control">
+        @Html.ValidationMessageFor(x => x.valor)
     </div>
     <div class="form-group">
         <label for="dtVencimento">Data de Vencimento</label>
@@ -68,8 +71,9 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-    <a class="btn btn-secondary btn-block" asp-controller="ACR" asp-action="Index" role="button">Voltar</a>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Administrativo" asp-action="Index" role="button">Voltar</a>
 </form>
 
 

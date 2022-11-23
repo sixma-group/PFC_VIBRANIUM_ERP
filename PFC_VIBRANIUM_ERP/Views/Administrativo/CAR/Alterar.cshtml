@@ -1,15 +1,18 @@
-﻿@model ApbModel
+﻿@model CARModel
 @{
-    ViewData["Title"] = "Cadastrar registro Contas a Pagar";
+    ViewData["Title"] = "Alterar registros Contas a Receber";
 }
 
 <div class="text-center">
 
-    <h1 class="display-4"> Cadastrar Registro</h1>
+    <h1 class="display-4"> Alterar Registros</h1>
 
 </div>
 
-<form asp-controller="APB" asp-action="Cadastrar" method="post">
+<form asp-controller="Administrativo" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
     <div class="form-group">
         <label for="dtTransacao">Data da Transação</label>
         <input type="datetime" asp-for="dtTransacao" class="form-control">
@@ -21,14 +24,19 @@
         @Html.ValidationMessageFor(x => x.especie)
     </div>
     <div class="form-group">
+        <label for="serie">Série</label>
+        <input type="number" asp-for="serie" class="form-control">
+        @Html.ValidationMessageFor(x => x.serie)
+    </div>
+    <div class="form-group">
         <label for="titulo">Titulo</label>
         <input type="text" asp-for="titulo" class="form-control">
         @Html.ValidationMessageFor(x => x.titulo)
     </div>
     <div class="form-group">
-        <label for="valor">Valor</label>
-        <input type="text" asp-for="valor" class="form-control">
-        @Html.ValidationMessageFor(x => x.valor)
+        <label for="valorTitulo">Valor do Título</label>
+        <input type="text" asp-for="valorTitulo" class="form-control">
+        @Html.ValidationMessageFor(x => x.valorTitulo)
     </div>
     <div class="form-group">
         <label for="dtVencimento">Data de Vencimento</label>
@@ -48,6 +56,7 @@
         </select>
 
     </div>
+
     <div class="form-group">
         <label for="parcela">Parcela</label>
         <input type="number" asp-for="parcela" class="form-control" placeholder="Número de parcelas">
@@ -62,7 +71,9 @@
         </select>
     </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-        <a class="btn btn-secondary btn-block" asp-controller="APB" asp-action="Index" role="button">Voltar</a>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Administrativo" asp-action="Index" role="button">Voltar</a>
 </form>
+
 

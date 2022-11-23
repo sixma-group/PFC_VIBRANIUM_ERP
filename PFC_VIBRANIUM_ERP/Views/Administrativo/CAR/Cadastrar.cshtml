@@ -1,18 +1,15 @@
-﻿@model AcrModel
+﻿@model CARModel
 @{
-    ViewData["Title"] = "Alterar registros Contas a Receber";
+    ViewData["Title"] = "Cadastrar registro Contas a Receber";
 }
 
 <div class="text-center">
 
-    <h1 class="display-4"> Alterar Registros</h1>
+    <h1 class="display-4"> Cadastrar Registro</h1>
 
 </div>
 
-<form asp-controller="ACR" asp-action="Alterar" method="post">
-
-    <input type="hidden" asp- form="id" />
-
+<form asp-controller="Administrativo" asp-action="Cadastrar" method="post">
     <div class="form-group">
         <label for="dtTransacao">Data da Transação</label>
         <input type="datetime" asp-for="dtTransacao" class="form-control">
@@ -71,9 +68,8 @@
         </select>
     </div>
 
-
-    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
-    <a class="btn btn-secondary btn-block" asp-controller="ACR" asp-action="Index" role="button">Voltar</a>
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Administrativo" asp-action="Index" role="button">Voltar</a>
 </form>
 
 

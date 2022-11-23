@@ -1,0 +1,14 @@
+﻿@model ApbModel
+@{
+    ViewData["Title"] = "Confirmar exclusao";
+}
+
+<div class="text-center">
+
+    <h3>Deseja excluir o registro (@Model.idForn) ?</h3>
+
+</div>
+
+<a class="btn btn-primary btn-block" role="button" asp-controller="APB" asp-action="Index">Cancelar Exclusão </a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="APB" asp-action="ExcluirApb" asp-route-id="@Model.idForn">Confirmar Exclusão </a>
+

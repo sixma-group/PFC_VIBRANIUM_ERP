@@ -1,0 +1,14 @@
+﻿@model AcrModel
+@{
+    ViewData["Title"] = "Confirmar exclusao";
+}
+
+<div class="text-center">
+
+    <h3>Deseja excluir o registro (@Model.idCli) ?</h3>
+
+</div>
+
+<a class="btn btn-primary btn-block" role="button" asp-controller="ACR" asp-action="Index">Cancelar Exclusão </a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="ACR" asp-action="ExcluirAcr" asp-route-id="@Model.idCli">Confirmar Exclusão </a>
+

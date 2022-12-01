@@ -1,0 +1,57 @@
+﻿@model PedidoModel
+@{
+    ViewData["Title"] = "Alterar Pedido";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Alterar dados do Pedido</h1>
+
+</div>
+
+<form asp-controller="Pedido" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
+    <div class="form-group">
+        <label for="tipo">Tipo do pedido</label>
+        <select name="tipo" id="tipo">
+            <option value="compra">Compra</option>
+            <option value="venda">Venda</option>
+            @Html.ValidationMessageFor(x => x.tipo)
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="produtos">Produtos</label>
+        <input type="text" asp-for="produtos" class="form-control" placeholder="Digite o nome do produto">
+        @Html.ValidationMessageFor(x => x.produtos)
+    </div>
+    <div class="form-group">
+        <label for="dtPedido">Data do Pedido</label>
+        <input type="datetime" asp-for="dtPedido" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtPedido)
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input type="text" asp-for="quantidade" class="form-control" placeholder="Digite a quantidade">
+        @Html.ValidationMessageFor(x => x.quantidade)
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="text" asp-for="valor" class="form-control" placeholder="Digite o valor">
+        @Html.ValidationMessageFor(x => x.valor)
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="aprovado">Aprovado</option>
+            <option value="reprovado">Reprovado</option>
+            @Html.ValidationMessageFor(x => x.status)
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Pedido" asp-action="Index" role="button">Voltar</a>
+</form>
+

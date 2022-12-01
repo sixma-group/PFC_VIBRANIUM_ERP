@@ -1,0 +1,69 @@
+﻿@model List<CAPModel>
+@{
+    ViewData["Title"] = "Listagem de Registros";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Administrativo" asp-action="CadastrarCAP"> Cadastrar novo Registro</a>
+    </div>
+
+    <br />
+
+    <h1 class="display-4"> Registros Cadastrados em Sistema</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data Transação</th>
+                <th scope="col">Espécie</th>
+                <th scope="col">Série</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data de Vencimento</th>
+                <th scope="col">Data de Emissão</th>
+                <th scope="col">Moeda</th>
+                <th scope="col">Parcela</th>
+                <th scope="col">Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (CAPModel CAP in Model)
+                {
+            <tr>
+                <th scope="row">@CAP.idForn</th>
+                <td>@CAP.dtTransacao</td>
+                <td>@CAP.especie</td>
+                <td>@CAP.serie</td>
+                <td>@CAP.titulo</td>
+                <td>@CAP.valor</td>
+                <td>@CAP.dtVencimento</td>
+                <td>@CAP.dtEmissao</td>
+                <td>@CAP.moeda</td>
+                <td>@CAP.parcela</td>
+                <td>@CAP.status</td>
+
+
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-route-id="@CAP.idForn" asp-controller="Administrativo" asp-action="Alterar">Alterar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@CAP.idForn" asp-controller="Administrativo" asp-action="Excluir">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <a class="btn btn-secondary btn-block" asp-controller="Administrativo" asp-action="Index" role="button">Voltar</a>
+
+</div>
+

@@ -1,0 +1,68 @@
+﻿@model CAPModel
+@{
+    ViewData["Title"] = "Cadastrar registro Contas a Pagar";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Cadastrar Registro</h1>
+
+</div>
+
+<form asp-controller="Administrativo" asp-action="Cadastrar" method="post">
+    <div class="form-group">
+        <label for="dtTransacao">Data da Transação</label>
+        <input type="datetime" asp-for="dtTransacao" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtTransacao)
+    </div>
+    <div class="form-group">
+        <label for="especie">Espécie</label>
+        <input type="text" asp-for="especie" class="form-control">
+        @Html.ValidationMessageFor(x => x.especie)
+    </div>
+    <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input type="text" asp-for="titulo" class="form-control">
+        @Html.ValidationMessageFor(x => x.titulo)
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="text" asp-for="valor" class="form-control">
+        @Html.ValidationMessageFor(x => x.valor)
+    </div>
+    <div class="form-group">
+        <label for="dtVencimento">Data de Vencimento</label>
+        <input type="datetime" asp-for="dtVencimento" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtVencimento)
+    </div>
+    <div class="form-group">
+        <label for="dtEmissao">Data de Emissão</label>
+        <input type="datetime" asp-for="dtEmissao" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtEmissao)
+    </div>
+    <div class="form-group">
+        <label for="moeda">Tipo de moeda</label>
+        <select name="moeda" id="moeda">
+            <option value="real"> Real</option>
+            <option value="dolar"> Dolar</option>
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="parcela">Parcela</label>
+        <input type="number" asp-for="parcela" class="form-control" placeholder="Número de parcelas">
+        @Html.ValidationMessageFor(x => x.parcela)
+    </div>
+    <div class="form-group">
+        <label for="moeda">Status</label>
+        <select name="status" id="moeda">
+            <option value="vencer"> A vencer</option>
+            <option value="vencido"> Vencido</option>
+            <option value="pago"> Pago</option>
+        </select>
+    </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        <a class="btn btn-secondary btn-block" asp-controller="Administrativo" asp-action="Index" role="button">Voltar</a>
+</form>
+

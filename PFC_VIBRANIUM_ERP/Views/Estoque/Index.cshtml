@@ -1,0 +1,55 @@
+﻿@model List<EstoqueModel>
+@{
+    ViewData["Title"] = "Estoque";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Estoque" asp-action="Cadastrar"> Cadastrar novo item para Estoque</a>
+    </div>
+
+    <br />
+
+    <h1 class="display-4"> Estoque Cadastrado em Sistemas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Quantidade</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (EstoqueModel estoque in Model)
+                {
+            <tr>
+                <th scope="row">@estoque.id</th>
+                <td>@estoque.nome</td>
+                <td>@estoque.preco</td>
+                <td>@estoque.marca</td>
+                <td>@estoque.descricao</td>
+                <td>@estoque.quantidade</td>
+
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-route-id="@estoque.id" asp-controller="Estoque" asp-action="Alterar">Alterar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@estoque.id" asp-controller="Estoque" asp-action="Excluir">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

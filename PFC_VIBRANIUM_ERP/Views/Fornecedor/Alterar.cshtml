@@ -1,0 +1,75 @@
+﻿@model FornecedorModel
+@{
+    ViewData["Title"] = "Alterar Fornecedor";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Alterar dados do Fornecedor</h1>
+
+</div>
+
+<form asp-controller="Fornecedor" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
+    <div class="form-group">
+        <label for="nomefornecedor">Nome do Fornecedor</label>
+        <input type="text" asp-for="nomefornecedor" class="form-control" placeholder="Digite o nome do fornecedor">
+        @Html.ValidationMessageFor(x => x.nomefornecedor)
+    </div>
+    <div class="form-group">
+        <label for="pais">País</label>
+        <input type="text" asp-for="pais" class="form-control" placeholder="Digite o País do fornecedor">
+        @Html.ValidationMessageFor(x => x.pais)
+    </div>
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input type="text" asp-for="estado" class="form-control" placeholder="Digite o estado do fornecedor">
+        @Html.ValidationMessageFor(x => x.estado)
+    </div>
+    <div class="form-group">
+        <label for="veiculo">Tipo da pessoa</label>
+        <select name="pessoa" id="pessoa">
+            <option value="juridica"> Juridica</option>
+            <option value="fisica"> Fisica</option>
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="idfederal">Dados</label>
+        <input type="text" asp-for="idfederal" class="form-control" placeholder="Digite o CPF ou CNPJ">
+        @Html.ValidationMessageFor(x => x.idfederal)
+    </div>
+    <div class="form-group">
+        <label for="abrev">Nome abreviado</label>
+        <input type="text" asp-for="abrev" class="form-control" placeholder="Digite o nome abreviado do fornecedor">
+        @Html.ValidationMessageFor(x => x.abrev)
+    </div>
+
+
+    <div class="form-group">
+        <label for="pagamento">Forma de Pagamento</label>
+        <input type="text" asp-for="pagamento" class="form-control">
+        @Html.ValidationMessageFor(x => x.pagamento)
+    </div>
+    <div class="form-group">
+        <label for="banco">Banco</label>
+        <input type="text" asp-for="banco" class="form-control" placeholder="Informe Banco do fornecedor">
+        @Html.ValidationMessageFor(x => x.banco)
+    </div>
+    <div class="form-group">
+        <label for="agencia">Agencia</label>
+        <input type="text" asp-for="agencia" class="form-control" placeholder="Informe a Agencia do fornecedor">
+        @Html.ValidationMessageFor(x => x.agencia)
+    </div>
+    <div class="form-group">
+        <label for="conta">Conta</label>
+        <input type="text" asp-for="conta" class="form-control" placeholder="Informe a conta do fornecedor">
+        @Html.ValidationMessageFor(x => x.conta)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Fornecedor" asp-action="Index" role="button">Voltar</a>
+</form>
+

@@ -1,0 +1,66 @@
+﻿@model List<FornecedorModel>
+@{
+    ViewData["Title"] = "Listagem de Fornecedores";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Fornecedor" asp-action="Cadastrar"> Cadastrar novo Fornecedor</a>
+    </div>
+
+    <br />
+
+    <h1 class="display-4"> Fornecedores Cadastrados em Sistema</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">País</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Tipo Pessoa</th>
+                <th scope="col">Federal</th>
+                <th scope="col">Nome Abreviado</th>
+
+
+                <th scope="col">Forma Pagamento</th>
+                <th scope="col">Banco</th>
+                <th scope="col">Agencia</th>
+                <th scope="col">Conta</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (FornecedorModel fornecedor in Model)
+                {
+                    <tr>
+                        <th scope="row">@fornecedor.idForn</th>
+                        <td>@fornecedor.nomefornecedor</td>
+                        <td>@fornecedor.pais</td>
+                        <td>@fornecedor.estado</td>
+                        <td>@fornecedor.pessoa</td>
+                        <td>@fornecedor.idfederal</td>
+                        <td>@fornecedor.abrev</td>
+
+
+                        <td>@fornecedor.pagamento</td>
+                        <td>@fornecedor.banco</td>
+                        <td>@fornecedor.agencia</td>
+                        <td>@fornecedor.conta</td>
+
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Alterar">Alterar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Excluir">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,63 @@
+﻿@model OPModel
+@{
+    ViewData["Title"] = "Alterar Ordem de Produção";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"> Alterar Ordem de Produção</h1>
+
+</div>
+
+<form asp-controller="OP" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp- form="id" />
+
+
+    <div class="form-group">
+        <label for="idItem">ID Item</label>
+        <input type="text" asp-for="idItem" class="form-control">
+        @Html.ValidationMessageFor(x => x.idItem)
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input type="text" asp-for="quantidade" class="form-control">
+        @Html.ValidationMessageFor(x => x.quantidade)
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="aberta"> Aberta </option>
+            <option value="execucao"> Em execução </option>
+            <option value="terminada"> Terminada </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" asp-for="descricao" class="form-control">
+        @Html.ValidationMessageFor(x => x.descricao)
+    </div>
+    <div class="form-group">
+        <label for="roteiro">Roteiro</label>
+        <input type="text" asp-for="roteiro" class="form-control">
+        @Html.ValidationMessageFor(x => x.roteiro)
+    </div>
+    <div class="form-group">
+        <label for="dtEmissao">Data de Emissão</label>
+        <input type="datetime" asp-for="dtEmissao" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtEmissao)
+    </div>
+    <div class="form-group">
+        <label for="dtTermino">Data de Termino</label>
+        <input type="datetime" asp-for="dtTermino" class="form-control">
+        @Html.ValidationMessageFor(x => x.dtTermino)
+    </div>
+    
+
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="OP" asp-action="Index" role="button">Voltar</a>
+</form>
+
+

@@ -31,32 +31,6 @@ namespace PFC_VIBRANIUM_ERP.Models
         public string abrev { get; set; }
         [Required(ErrorMessage = "Favor informe o nome abreviado")]
 
-        //Endereço
-
-        public string descricao { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string cep { get; set; }
-        [Required(ErrorMessage = "Favor informe o CEP")]
-
-        public int numero { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string bairro { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string cidade { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string contato { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string telefone { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string email { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-
 
         //Financeiro
         public string recebimento { get; set; }

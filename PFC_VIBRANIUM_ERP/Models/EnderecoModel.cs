@@ -6,44 +6,29 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PFC_VIBRANIUM_ERP.Models
 {
-    public class FuncionarioModel
+    public class EnderecoModel
     {
-        public int id{ get; set; }
+        public string tipo { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string nomeFuncionario { get; set; }
+        public int id { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public DateTime dtAdmissao { get; set; }
+        public int descricao { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public DateTime dtTermino { get; set; }
+        public string cep { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public DateTime dtDesligamento { get; set; }
+        public string endereco { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string cargo { get; set; }
+        public int numero { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public double salario { get; set; }
+        public string bairro { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-
-        //Financeiro
-        public string pagamento { get; set; }
+        public string cidade { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string banco { get; set; }
+        public string contato { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string agencia { get; set; }
+        public string telefone { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-
-        public string conta { get; set; }
-
-
-        //Endereço Vinculo FK
-        public int idEnd { get; set; }
+        public string email { get; set; }
+        
     }
 }

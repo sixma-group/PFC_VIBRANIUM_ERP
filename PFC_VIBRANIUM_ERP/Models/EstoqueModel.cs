@@ -8,7 +8,8 @@ namespace PFC_VIBRANIUM_ERP.Models
 {
     public class EstoqueModel
     {
-        public int id { get; set; }
+        [Key()]
+        public int idItem { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
 
         public string nome { get; set; }
@@ -24,6 +25,6 @@ namespace PFC_VIBRANIUM_ERP.Models
         [Required(ErrorMessage = "Favor informe a descrição")]
 
         public int quantidade { get; set; }
-        
+
     }
 }

@@ -8,27 +8,28 @@ namespace PFC_VIBRANIUM_ERP.Models
 {
     public class EnderecoModel
     {
+        [Key()]
+        public int idEnd { get; set; }
+
+        [Required(ErrorMessage = "Favor insira a informação")]
         public string tipo { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-        public int id { get; set; }
-        [Required(ErrorMessage = "Favor insira a informação")]
-        public int descricao { get; set; }
+        public string? descricao { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string cep { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string endereco { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-        public int numero { get; set; }
+        public string numero { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string bairro { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string cidade { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
-        public string contato { get; set; }
+        public string? contato { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string telefone { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public string email { get; set; }
-        
     }
 }

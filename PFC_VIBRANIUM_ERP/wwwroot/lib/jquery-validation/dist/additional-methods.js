@@ -813,7 +813,9 @@ $.validator.addMethod( "nowhitespace", function( value, element ) {
 }, "No white space please" );
 
 /**
-* Return true if the field value matches the given format RegExp
+* Return true if the 
+ * 
+ * value matches the given format RegExp
 *
 * @example $.validator.methods.pattern("AR1004",element,/^AR\d{4}$/)
 * @result true

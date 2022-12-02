@@ -26,7 +26,7 @@
         @Html.ValidationMessageFor(x => x.estado)
     </div>
     <div class="form-group">
-        <label for="veiculo">Tipo da pessoa</label>
+        <label for="pessoa">Tipo da pessoa</label>
         <select name="pessoa" id="pessoa">
             <option value="juridica"> Juridica</option>
             <option value="fisica"> Fisica</option>
@@ -47,7 +47,7 @@
    
 
     <div class="form-group">
-        <label for="recebimento">Recebidos</label>
+        <label for="recebimento">Forma de Pagamento</label>
         <input type="text" asp-for="recebimento" class="form-control">
         @Html.ValidationMessageFor(x => x.recebimento)
     </div>

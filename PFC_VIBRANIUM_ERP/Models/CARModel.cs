@@ -8,6 +8,9 @@ namespace PFC_VIBRANIUM_ERP.Models
 {
     public class CARModel
     {
+
+        public int idTituloCAR { get; set; }
+        [Required(ErrorMessage = "Favor insira a informação")]
         public int idCli { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public DateTime dtTransacao { get; set; }

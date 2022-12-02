@@ -8,6 +8,8 @@ namespace PFC_VIBRANIUM_ERP.Models
 {
     public class CAPModel
     {
+        public int idTituloCAP{ get; set; }
+        [Required(ErrorMessage = "Favor insira a informação")]
         public int idForn { get; set; }
         [Required(ErrorMessage = "Favor insira a informação")]
         public DateTime dtTransacao { get; set; }

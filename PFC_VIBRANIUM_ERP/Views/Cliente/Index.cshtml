@@ -1,64 +1,155 @@
-﻿@model List<ClienteModel>
+﻿@model ClienteViewModel
 @{
-    ViewData["Title"] = "Listagem de Clientes";
+    ViewData["Title"] = "Módulo de Clientes";
 }
 
 <div class="text-center">
+    <h1 class="display-4"> Módulo de Clientes</h1>
+    <br/>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Cadastrar"> Cadastrar novo Cliente</a>
+        @* <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Cadastrar"> Cadastrar novo Cliente</a> *@
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarCliente">Cadastrar novo Cliente</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#listaClientes">Listar Clientes</button>
     </div>
 
     <br/>
 
-    <h1 class="display-4"> Clientes Cadastrados em Sistema</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">País</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Tipo Pessoa</th>
-                <th scope="col">Federal</th>
-                <th scope="col">Nome Abreviado</th>
+    <div class="modal modal-xl fade" id="listaClientes" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content modal-xl">
+                <div class="modal-header">
+                    <h4 class="modal-title">Clientes Cadastrados em Sistema</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-xl modal-dialog-scrollable">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">País</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Tipo Pessoa</th>
+                            <th scope="col">Federal</th>
+                            <th scope="col">Nome Abreviado</th>
+                            <th scope="col">Recebidos</th>
+                            <th scope="col">Banco</th>
+                            <th scope="col">Agencia</th>
+                            <th scope="col">Conta</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if (Model != null && Model.listaClientes.Any())
+                        {
+                            foreach (ClienteModel cliente in Model.listaClientes)
+                            {
+                                <tr>
+                                    <th scope="row">@cliente.idCli</th>
+                                    <td>@cliente.nome</td>
+                                    <td>@cliente.pais</td>
+                                    <td>@cliente.estado</td>
+                                    <td>@cliente.pessoa</td>
+                                    <td>@cliente.idfederal</td>
+                                    <td>@cliente.abrev</td>
 
-                <th scope="col">Recebidos</th>
-                <th scope="col">Banco</th>
-                <th scope="col">Agencia</th>
-                <th scope="col">Conta</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (ClienteModel cliente in Model)
-                {
-            <tr>
-                <th scope="row">@cliente.idCli</th>
-                <td>@cliente.nome</td>
-                <td>@cliente.pais</td>
-                <td>@cliente.estado</td>
-                <td>@cliente.pessoa</td>
-                <td>@cliente.idfederal</td>
-                <td>@cliente.abrev</td>
+                                    <td>@cliente.recebimento</td>
+                                    <td>@cliente.banco</td>
+                                    <td>@cliente.agencia</td>
+                                    <td>@cliente.conta</td>
 
-                <td>@cliente.recebimento</td>
-                <td>@cliente.banco</td>
-                <td>@cliente.agencia</td>
-                <td>@cliente.conta</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a role="button" class="btn btn-primary" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Alterar">Alterar</a>
+                                            <a role="button" class="btn btn-danger" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Excluir">Excluir</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
 
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Alterar">Alterar</a>
-                        <a role="button" class="btn btn-danger" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Excluir">Excluir</a>
-                    </div>
-                </td>
-               </tr>
-                }
-            }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>
 
+<div class="modal modal-xl center fade" id="cadastrarCliente" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content modal-xl">
+                <form asp-controller="Cliente" asp-action="Cadastrar" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Cadastrar Cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body modal-xl modal-dialog-scrollable flex-column">
+                        <div class="form-group">
+                            <label for="nome">Nome do Cliente</label>
+                            <input type="text" asp-for="clienteModel.nome" class="form-control" placeholder="Digite o nome do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.nome)
+                        </div>
+                        <div class="form-group">
+                            <label for="pais">País</label>
+                            <input type="text" asp-for="clienteModel.pais" class="form-control" placeholder="Digite o País do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.pais)
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <input type="text" asp-for="clienteModel.estado" class="form-control" placeholder="Digite o estado do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.estado)
+                        </div>
+                        <div class="form-group">
+                            <label for="veiculo">Tipo da pessoa</label>
+                            <select name="pessoa" id="pessoa">
+                                <option value="juridica"> Juridica</option>
+                                <option value="fisica"> Fisica</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idfederal">Dados</label>
+                            <input type="text" asp-for="clienteModel.idfederal" class="form-control" placeholder="Digite o CPF ou CNPJ">
+                            @Html.ValidationMessageFor(x => x.clienteModel.idfederal)
+                        </div>
+                        <div class="form-group">
+                            <label for="abrev">Nome abreviado</label>
+                            <input type="text" asp-for="clienteModel.abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.abrev)
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recebimento">Recebidos</label>
+                            <input type="text" asp-for="clienteModel.recebimento" class="form-control">
+                            @Html.ValidationMessageFor(x => x.clienteModel.recebimento)
+                        </div>
+                        <div class="form-group">
+                            <label for="banco">Banco</label>
+                            <input type="text" asp-for="clienteModel.banco" class="form-control" placeholder="Informe Banco do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.banco)
+                        </div>
+                        <div class="form-group">
+                            <label for="agencia">Agencia</label>
+                            <input type="text" asp-for="clienteModel.agencia" class="form-control" placeholder="Informe a Agencia do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.agencia)
+                        </div>
+                        <div class="form-group">
+                            <label for="conta">Conta</label>
+                            <input type="text" asp-for="clienteModel.conta" class="form-control" placeholder="Informe a conta do cliente">
+                            @Html.ValidationMessageFor(x => x.clienteModel.conta)
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

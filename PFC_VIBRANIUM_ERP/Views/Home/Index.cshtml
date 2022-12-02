@@ -3,9 +3,50 @@
 }
 
 <div class="text-center">
-    <br />
+    <br/>
     <h1 class="display-4">Seja Bem Vindo!</h1>
-    <br />
-    <p>PFC Vibranium ERP -  by Sixma Group ® </p>
+    <br/>
+    <div class="container-fluid d-sm-inline-flex flex-wrap">
+
+        <a class="menu-item" role="button" asp-controller="Cliente" asp-action="Index">Clientes</a>
+
+        <a class="menu-item" role="button" asp-controller="Fornecedor" asp-action="Index">Fornecedores</a>
+
+        <a class="menu-item" role="button" asp-controller="RH" asp-action="Index">DHO</a>
+
+        <a class="menu-item" role="button" asp-controller="Administrativo" asp-action="Index">Administrativo</a>
+
+        <a class="menu-item" role="button" asp-controller="Comercial" asp-action="Index">Comercial</a>
+
+        <a class="menu-item" role="button" asp-controller="Produto" asp-action="Index">Produtos</a>
+
+        <a class="menu-item" role="button" asp-controller="Estoque" asp-action="Index">Estoque</a>
+
+        <a class="menu-item" role="button" asp-controller="Acesso" asp-action="Index">Acessos</a>
+        
+        <a class="menu-item" role="button" asp-controller="OP" asp-action="Index">Ordem de Produção</a>
+
+    </div>
 </div>
 
+<style>
+.menu-item {
+  border-radius: 2px; 
+  background: linear-gradient( 0.5turn, #4985b6, #4985b6, #5b91be, #a4c2db );
+  width: 140px; 
+  height: 70px; 
+  padding-top: 10px; 
+  padding-left: 10px;
+  text-decoration:none !important;
+  text-align: start; 
+  color: white !important;
+  
+  margin: 5px;
+ }
+.menu-item:hover{
+  border: 2px solid #b3b3b3;
+  font-weight: bold;
+  width: 150px; 
+  height: 80px; 
+} 
+</style>

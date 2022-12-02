@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PFC_VIBRANIUM_ERP.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PFC_VIBRANIUM_ERP.Data
 {
@@ -12,7 +16,8 @@ namespace PFC_VIBRANIUM_ERP.Data
         public DbSet<ClienteModel> cliente { get; set; }
 
 
-        /*public DbSet<FornecedorModel> fornecedor { get; set; }
+        /*
+        public DbSet<FornecedorModel> fornecedor { get; set; }
         public DbSet<FuncionarioModel> funcionario { get; set; }
         public DbSet<EnderecoModel> endereco { get; set; }
         public DbSet<AcessoModel> acesso { get; set; }
@@ -25,8 +30,8 @@ namespace PFC_VIBRANIUM_ERP.Data
         public DbSet<OPModel> OP { get; set; }
         public DbSet<PedidoModel> Pedido { get; set; }
         public DbSet<ProdutoModel> Produto { get; set; }
-        
-         */
+        */
+         
 
     }
 }

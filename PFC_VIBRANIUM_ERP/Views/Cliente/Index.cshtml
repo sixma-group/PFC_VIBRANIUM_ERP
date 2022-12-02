@@ -112,7 +112,7 @@
                             @Html.ValidationMessageFor(x => x.clienteModel.estado)
                         </div>
                         <div class="form-group">
-                            <label for="veiculo">Tipo da pessoa</label>
+                            <label for="pessoa">Tipo da pessoa</label>
                             <select name="pessoa" id="pessoa">
                                 <option value="juridica"> Juridica</option>
                                 <option value="fisica"> Fisica</option>
@@ -148,6 +148,11 @@
                             <label for="conta">Conta</label>
                             <input type="text" asp-for="clienteModel.conta" class="form-control" placeholder="Informe a conta do cliente">
                             @Html.ValidationMessageFor(x => x.clienteModel.conta)
+                        </div>
+                        <div class="form-group">
+                            <label for="idEnd">Id Enderéço</label>
+                            <input type="text" asp-for="clienteModel.idEnd" class="form-control" placeholder="Informe a id de Endereço">
+                            @Html.ValidationMessageFor(x => x.clienteModel.idEnd)
                         </div>
                     </div>
 

@@ -8,8 +8,7 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
 {
     public interface IClienteRepositorio
     {
-
-        //Cliente
+        
         List<ClienteModel> BuscarTodos();
 
         ClienteModel ListarPoId(int idCli);

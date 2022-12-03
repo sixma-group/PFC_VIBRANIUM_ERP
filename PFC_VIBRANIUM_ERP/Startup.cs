@@ -37,17 +37,19 @@ namespace PFC_VIBRANIUM_ERP
             
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
             services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
-
-            //services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
-
-            /*services.AddScoped<ICAPRepositorio, CAPRepositorio>();
-            services.AddScoped<ICARRepositorio, CARRepositorio>();
-            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
-            services.AddScoped<IEstoqueRepositorio, EstoqueRepositorio>();
+            services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
             services.AddScoped<IFornecedorRepositorio, FornecedorRepositorio>();
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
-            services.AddScoped<IOPRepositorio, OPRepositorio>();
-            services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
+            services.AddScoped<IEstoqueRepositorio, EstoqueRepositorio>();
+            services.AddScoped<ICAPRepositorio, CAPRepositorio>();
+            services.AddScoped<ICARRepositorio, CARRepositorio>();
+
+
+            /*
+            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
+                       
+            
+            services.AddScoped<IOPRepositorio, OPRepositorio>();            
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();*/
 
             services.AddSession(o =>

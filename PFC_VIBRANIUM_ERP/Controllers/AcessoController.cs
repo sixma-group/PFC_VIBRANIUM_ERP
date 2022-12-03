@@ -18,8 +18,8 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         public IActionResult Listar()
         {
 
-            List<AcessoModel> acesso = _acessoRepositorio.BuscarTodos();
-            return View(acesso);
+            List<AcessoModel> acessos = _acessoRepositorio.BuscarTodos();
+            return View(acessos);
 
         }
 

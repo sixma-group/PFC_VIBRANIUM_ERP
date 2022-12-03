@@ -1,66 +1,101 @@
-﻿@model List<FornecedorModel>
+﻿@model FornecedorModel
 @{
-    ViewData["Title"] = "Listagem de Fornecedores";
+    ViewData["Title"] = "Módulo de Fornecedores";
 }
 
 <div class="text-center">
+    <h1 class="display-4">Módulo de Fornecedor</h1>
+    <br/>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Fornecedor" asp-action="Cadastrar"> Cadastrar novo Fornecedor</a>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarFornecedor">Cadastrar novo Fornecedor</button>
     </div>
+    <br/>
 
-    <br />
-
-    <h1 class="display-4"> Fornecedores Cadastrados em Sistema</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">País</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Tipo Pessoa</th>
-                <th scope="col">Federal</th>
-                <th scope="col">Nome Abreviado</th>
-
-
-                <th scope="col">Forma Pagamento</th>
-                <th scope="col">Banco</th>
-                <th scope="col">Agencia</th>
-                <th scope="col">Conta</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (FornecedorModel fornecedor in Model)
-                {
-                    <tr>
-                        <th scope="row">@fornecedor.idForn</th>
-                        <td>@fornecedor.razao</td>
-                        <td>@fornecedor.pais</td>
-                        <td>@fornecedor.estado</td>
-                        <td>@fornecedor.pessoa</td>
-                        <td>@fornecedor.idfederal</td>
-                        <td>@fornecedor.nome_abrev</td>
-
-
-                        <td>@fornecedor.tipo_pagamento</td>
-                        <td>@fornecedor.banco</td>
-                        <td>@fornecedor.agencia</td>
-                        <td>@fornecedor.conta</td>
-
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-primary" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Alterar">Alterar</a>
-                                <a role="button" class="btn btn-danger" asp-route-id="@fornecedor.idForn" asp-controller="Fornecedor" asp-action="Excluir">Excluir</a>
-                            </div>
-                        </td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-info btn-lg" role="button" asp-controller="Fornecedor" asp-action="Listar"> Listar Fornecedores</a>
+    </div>
 </div>
 
+<div class="modal modal-xl center fade" id="cadastrarFornecedor" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content modal-xl">
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastrar novo Fornecedor</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form asp-controller="Fornecedor" asp-action="Cadastrar" method="post">
+                <div class="modal-body modal-xl modal-dialog-scrollable flex-column">
+
+                    <div class="form-group">
+                        <label for="nomefornecedor">Nome do Fornecedor</label>
+                        <input type="text" asp-for="razao" class="form-control" placeholder="Digite o nome do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.razao)
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <input type="text" asp-for="pais" class="form-control" placeholder="Digite o País do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.pais)
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input type="text" asp-for="estado" class="form-control" placeholder="Digite o estado do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.estado)
+                    </div>
+                    <div class="form-group">
+                        <label for="veiculo">Tipo da pessoa</label>
+                        <select name="pessoa" id="pessoa">
+                            <option value="juridica"> Juridica</option>
+                            <option value="fisica"> Fisica</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="idfederal">Dados</label>
+                        <input type="text" asp-for="idfederal" class="form-control" placeholder="Digite o CPF ou CNPJ">
+                        @Html.ValidationMessageFor(x => x.idfederal)
+                    </div>
+                    <div class="form-group">
+                        <label for="abrev">Nome abreviado</label>
+                        <input type="text" asp-for="nome_abrev" class="form-control" placeholder="Digite o nome abreviado do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.nome_abrev)
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="pagamento">Forma de Pagamento</label>
+                        <input type="text" asp-for="tipo_pagamento" class="form-control">
+                        @Html.ValidationMessageFor(x => x.tipo_pagamento)
+                    </div>
+                    <div class="form-group">
+                        <label for="banco">Banco</label>
+                        <input type="text" asp-for="banco" class="form-control" placeholder="Informe o Banco do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.banco)
+                    </div>
+                    <div class="form-group">
+                        <label for="agencia">Agencia</label>
+                        <input type="text" asp-for="agencia" class="form-control" placeholder="Informe a Agencia do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.agencia)
+                    </div>
+                    <div class="form-group">
+                        <label for="conta">Conta</label>
+                        <input type="text" asp-for="conta" class="form-control" placeholder="Informe a conta do Fornecedor">
+                        @Html.ValidationMessageFor(x => x.conta)
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="idEnd">Id Enderéço</label>
+                        <input type="int" asp-for="idEnd" class="form-control" placeholder="Informe a id de Endereço">
+                        @Html.ValidationMessageFor(x => x.idEnd)
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

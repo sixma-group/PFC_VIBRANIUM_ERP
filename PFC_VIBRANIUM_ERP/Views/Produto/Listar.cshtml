@@ -1,0 +1,50 @@
+﻿@model List<ProdutoModel>
+@{
+    ViewData["Title"] = "Produto";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> Produtos Cadastrados em Sistemas</h1>
+
+    <br/>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço venda</th>
+            <th scope="col">Itens Empenhados</th>
+            <th scope="col">Estoque</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Aquisição</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (ProdutoModel produto in Model)
+            {
+                <tr>
+                    <th scope="row">@produto.idProd</th>
+                    <td>@produto.nome</td>
+                    <td>@produto.idItem</td>
+                    <td>@produto.valor_aquisicao</td>
+                    <td>@produto.preco_saida</td>
+                    <td>@produto.item</td>
+                    <td>@produto.descricao</td>
+
+
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-primary" asp-route-id="@produto.idItem" asp-controller="Produto" asp-action="Alterar">Alterar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@produto.idItem" asp-controller="Produto" asp-action="Excluir">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

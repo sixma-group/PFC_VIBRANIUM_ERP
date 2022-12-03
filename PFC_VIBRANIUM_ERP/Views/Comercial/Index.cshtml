@@ -1,66 +1,75 @@
-﻿@model List<PedidoModel>
+﻿@model PedidoModel
 @{
-    ViewData["Title"] = "Listagem de Pedidos";
+    ViewData["Title"] = "Módulo do Comercial";
 }
 
 <div class="text-center">
+    <h1 class="display-4"> Pedidos Cadastrados em Sistema</h1>
+    <br/>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Comercial" asp-action="Cadastrar"> Cadastrar novo Pedido</a>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarPedido">Cadastrar novo Pedido</button>
     </div>
+    <br/>
 
-    <br />
-
-    <h1 class="display-4"> Pedidos Cadastrados em Sistema</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Tipo Pedido</th>
-                <th scope="col">Produtos</th>
-                <th scope="col">Data Pedido</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Valor do Pedido</th>
-                <th scope="col">Status</th>
-                <th scope="col">Id Cliente</th>
-                <th scope="col">ID Fornecedor</th>
-
-                <th scope="col">Descrição</th>
-                <th scope="col">CEP</th>
-                <th scope="col">Endereço</th>
-                <th scope="col">Número</th>
-                <th scope="col">Bairro</th>
-                <th scope="col">Cidade</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (PedidoModel pedido in Model)
-                {
-            <tr>
-                <th scope="row">@pedido.idPed</th>
-                <td>@pedido.tipo</td>
-                <td>@pedido.produtos</td>
-                <td>@pedido.dtPedido</td>
-                <td>@pedido.quantidade</td>
-                <td>@pedido.valor</td>
-                <td>@pedido.status</td>
-                <td>@pedido.idCli</td>
-                <td>@pedido.idForn</td>
-
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-route-id="@pedido.idPed" asp-controller="Pedido" asp-action="Alterar">Alterar</a>
-                        <a role="button" class="btn btn-danger" asp-route-id="@pedido.idPed" asp-controller="Pedido" asp-action="Excluir">Excluir</a>
-                    </div>
-                </td>
-            </tr>
-                }
-            }
-        </tbody>
-    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-info btn-lg" role="button" asp-controller="Comercial" asp-action="Listar">Listar Pedidos</a>
+    </div>
 </div>
 
+<div class="modal modal-xl center fade" id="cadastrarPedido" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content modal-xl">
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastrar novo Pedido</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form asp-controller="Comercial" asp-action="Cadastrar" method="post">
+                <div class="modal-body modal-xl modal-dialog-scrollable flex-column">
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo do pedido</label>
+                        <select name="tipo" id="tipo">
+                            <option value="compra">Compra</option>
+                            <option value="venda">Venda</option>
+                            @Html.ValidationMessageFor(x => x.tipo)
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="produtos">Produtos</label>
+                        <input type="text" asp-for="produtos" class="form-control" placeholder="Digite o nome do produto">
+                        @Html.ValidationMessageFor(x => x.produtos)
+                    </div>
+                    <div class="form-group">
+                        <label for="dtPedido">Data do Pedido</label>
+                        <input type="datetime" asp-for="dtPedido" class="form-control">
+                        @Html.ValidationMessageFor(x => x.dtPedido)
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="text" asp-for="quantidade" class="form-control" placeholder="Digite a quantidade">
+                        @Html.ValidationMessageFor(x => x.quantidade)
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="text" asp-for="valor" class="form-control" placeholder="Digite o valor">
+                        @Html.ValidationMessageFor(x => x.valor)
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="status" id="status">
+                            <option value="aprovado">Aprovado</option>
+                            <option value="reprovado">Reprovado</option>
+                            @Html.ValidationMessageFor(x => x.status)
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

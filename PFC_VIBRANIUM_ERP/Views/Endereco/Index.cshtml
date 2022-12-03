@@ -1,63 +1,93 @@
-﻿@model List<EnderecoModel>
+﻿@model EnderecoModel
 @{
-    ViewData["Title"] = "Listagem de Endereços";
+    ViewData["Title"] = "Módulo de Endereço";
 }
 
 <div class="text-center">
+    <h1 class="display-4">Módulo de Endereço</h1>
+    <br/>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Endereco" asp-action="Cadastrar"> Cadastrar novo Endereço</a>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarEndereco">Cadastrar novo Endereço</button>
     </div>
+    <br/>
 
-    <br />
-
-    <h1 class="display-4"> Endereços Cadastrados em Sistema</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Tipo</th>
-                <th scope="col">Id</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">CEP</th>
-                <th scope="col">Endereço</th>
-                <th scope="col">Número</th>
-                <th scope="col">Bairro</th>
-                <th scope="col">Cidade</th>
-                <th scope="col">Contato</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (EnderecoModel endereco in Model)
-                {
-            <tr>
-                <th scope="row">@endereco.tipo</th>
-                <td>@endereco.idEnd</td>
-                <td>@endereco.descricao</td>
-                <td>@endereco.cep</td>
-                <td>@endereco.endereco</td>
-                <td>@endereco.numero</td>
-                <td>@endereco.bairro</td>
-                <td>@endereco.cidade</td>
-                <td>@endereco.contato</td>
-                <td>@endereco.telefone</td>
-                <td>@endereco.email</td>
-
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-route-id="@endereco.idEnd" asp-controller="Endereco" asp-action="Alterar">Alterar</a>
-                        <a role="button" class="btn btn-danger" asp-route-id="@endereco.idEnd" asp-controller="Endereco" asp-action="Excluir">Excluir</a>
-                    </div>
-                </td>
-            </tr>
-                }
-            }
-        </tbody>
-    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-info btn-lg" role="button" asp-controller="Endereco" asp-action="Listar">Listar Endereços</a>
+    </div>
 </div>
 
+<div class="modal modal-xl center fade" id="cadastrarEndereco" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content modal-xl">
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastrar novo Endereço</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form asp-controller="Endereco" asp-action="Cadastrar" method="post">
+                <div class="modal-body modal-xl modal-dialog-scrollable flex-column">
 
+                    <div class="form-group">
+                        <label for="tipo">Referência: </label>
+                        <select name="tipo" id="tipo">
+                            <option value="cliente"> Cliente</option>
+                            <option value="fornecedor"> Fornecedor</option>
+                            <option value="funcionario"> Funcionário</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">ID</label>
+                        <input type="number" asp-for="idEnd" class="form-control" placeholder="Digite o ID da referência">
+                        @Html.ValidationMessageFor(x => x.idEnd)
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" asp-for="descricao" class="form-control" placeholder="Digite a descrição do endereço">
+                        @Html.ValidationMessageFor(x => x.descricao)
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" asp-for="cep" class="form-control" placeholder="Digite o CEP">
+                        @Html.ValidationMessageFor(x => x.cep)
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número</label>
+                        <input type="number" asp-for="numero" class="form-control" placeholder="Digite o número do endereço">
+                        @Html.ValidationMessageFor(x => x.numero)
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" asp-for="bairro" class="form-control" placeholder="Digite o bairro do cliente">
+                        @Html.ValidationMessageFor(x => x.bairro)
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" asp-for="cidade" class="form-control" placeholder="Digite a cidade do cliente">
+                        @Html.ValidationMessageFor(x => x.cidade)
+                    </div>
+                    <div class="form-group">
+                        <label for="contato">Contato</label>
+                        <input type="text" asp-for="contato" class="form-control" placeholder="Informe o contato do cliente">
+                        @Html.ValidationMessageFor(x => x.contato)
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" asp-for="telefone" class="form-control" placeholder="Informe o telefone do cliente">
+                        @Html.ValidationMessageFor(x => x.telefone)
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" asp-for="email" class="form-control" placeholder="Informe email do cliente">
+                        @Html.ValidationMessageFor(x => x.email)
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

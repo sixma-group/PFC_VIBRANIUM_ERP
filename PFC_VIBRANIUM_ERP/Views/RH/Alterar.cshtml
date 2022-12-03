@@ -11,7 +11,8 @@
 
 <form asp-controller="RH" asp-action="Alterar" method="post">
 
-    <input type="hidden" asp- form="id" />
+    <input type="hidden" asp-for="id" />
+    @Html.ValidationMessageFor(x => x.idFunc)
 
     <div class="form-group">
         <label for="nomeFuncionario">Nome do Funcionario</label>

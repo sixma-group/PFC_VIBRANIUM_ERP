@@ -20,7 +20,7 @@
     <None Include="Views\Administrativo\CAR\Index.cshtml" />
     <None Include="Views\Administrativo\Index.cshtml" />
     <None Include="Views\Cliente\Alterar.cshtml" />
-    <None Include="Views\Cliente\Cadastrar.cshtml" />
+    <None Include="Views\Cliente\Listar.cshtml" />
     <None Include="Views\Cliente\Excluir.cshtml" />
     <None Include="Views\Cliente\Index.cshtml" />
     <None Include="Views\Comercial\Alterar.cshtml" />

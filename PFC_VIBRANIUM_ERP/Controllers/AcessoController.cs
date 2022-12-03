@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using PFC_VIBRANIUM_ERP.Models;
+using PFC_VIBRANIUM_ERP.Repositorio;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PFC_VIBRANIUM_ERP.Controllers
 {
@@ -10,9 +15,69 @@ namespace PFC_VIBRANIUM_ERP.Controllers
             return View();
         }
 
+        public IActionResult Listar()
+        {
+
+            List<AcessoModel> clientes = _acessoRepositorio.BuscarTodos();
+            return View(clientes);
+
+        }
+
+        private readonly AcessoRepositorio _acessoRepositorio;
+        public AcessoController(AcessoRepositorio clienteRepositorio)
+        {
+            _acessoRepositorio = clienteRepositorio;
+
+        }
+
         public IActionResult Cadastrar()
         {
             return View();
+        }
+
+        public IActionResult Alterar(int id)
+        {
+            AcessoModel acesso = _acessoRepositorio.ListarPoId(id);
+            return View(acesso);
+        }
+
+        public IActionResult Excluir(int id)
+        {
+            AcessoModel acesso = _acessoRepositorio.ListarPoId(id);
+            return View(acesso);
+        }
+        public IActionResult ExcluirCliente(int id)
+        {
+            _acessoRepositorio.Apagar(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(AcessoModel acesso)
+        {
+            if (ModelState.IsValid)
+            {
+                _acessoRepositorio.Adicionar(acesso);
+
+                return RedirectToAction("Index");
+            }
+                        
+            return View("Index");           
+
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(AcessoModel acesso)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _acessoRepositorio.Atualizar(acesso);
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Alterar", acesso);
         }
     }
 }

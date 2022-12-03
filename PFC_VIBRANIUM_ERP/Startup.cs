@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PFC_VIBRANIUM_ERP.Repositorio;
 
 namespace PFC_VIBRANIUM_ERP
 {
@@ -27,6 +28,20 @@ namespace PFC_VIBRANIUM_ERP
             services.AddControllersWithViews();
 
             services.AddEntityFrameworkNpgsql().AddDbContext<BancoContext>(o => o.UseNpgsql(Configuration.GetConnectionString("DataBase")));
+
+            services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+            services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
+
+            /*services.AddScoped<ICAPRepositorio, CAPRepositorio>();
+            services.AddScoped<ICARRepositorio, CARRepositorio>();
+            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
+            services.AddScoped<IEstoqueRepositorio, EstoqueRepositorio>();
+            services.AddScoped<IFornecedorRepositorio, FornecedorRepositorio>();
+            services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
+            services.AddScoped<IOPRepositorio, OPRepositorio>();
+            services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();*/
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

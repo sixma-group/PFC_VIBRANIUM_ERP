@@ -11,7 +11,8 @@
 
 <form asp-controller="Cliente" asp-action="Alterar" method="post">
 
-    <input type="hidden" asp- form="id" />
+    <input type="hidden" asp-for="idCli" />
+    @Html.ValidationMessageFor(x => x.idCli)
 
     <div class="form-group">
         <label for="nome">Nome do Cliente</label>
@@ -29,7 +30,7 @@
         @Html.ValidationMessageFor(x => x.estado)
     </div>
     <div class="form-group">
-        <label for="veiculo">Tipo da pessoa</label>
+        <label for="pessoa">Tipo da pessoa</label>
         <select name="pessoa" id="pessoa">
             <option value="juridica"> Juridica</option>
             <option value="fisica"> Fisica</option>
@@ -42,13 +43,13 @@
         @Html.ValidationMessageFor(x => x.idfederal)
     </div>
     <div class="form-group">
-        <label for="abrev">Nome abreviado</label>
+        <label for="nome_abrev">Nome abreviado</label>
         <input type="text" asp-for="nome_abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
         @Html.ValidationMessageFor(x => x.nome_abrev)
     </div>
 
     <div class="form-group">
-        <label for="recebimento">Recebidos</label>
+        <label for="tipo_recebimento">Recebidos</label>
         <input type="text" asp-for="tipo_recebimento" class="form-control">
         @Html.ValidationMessageFor(x => x.tipo_recebimento)
     </div>
@@ -67,7 +68,13 @@
         <input type="text" asp-for="conta" class="form-control" placeholder="Informe a conta do cliente">
         @Html.ValidationMessageFor(x => x.conta)
     </div>
+    <div class="form-group">
+        <label for="idEnd">Id Enderéço</label>
+        <input type="text" asp-for="idEnd" class="form-control" placeholder="Informe a id de Endereço">
+        @Html.ValidationMessageFor(x => x.idEnd)
+     </div>
+
 
     <button type="submit" class="btn btn-primary btn-block">Alterar</button>
-    <a class="btn btn-secondary btn-block" asp-controller="Cliente" asp-action="Index" role="button">Voltar</a>
+    <a class="btn btn-secondary btn-block" asp-controller="Cliente" asp-action="Listar" role="button">Voltar</a>
 </form>

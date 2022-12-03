@@ -1,10 +1,11 @@
 ﻿using PFC_VIBRANIUM_ERP.Models;
-//using PFC_VIBRANIUM_ERP.Repositorio;
+using PFC_VIBRANIUM_ERP.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace PFC_VIBRANIUM_ERP.Controllers
 {
@@ -15,22 +16,19 @@ namespace PFC_VIBRANIUM_ERP.Controllers
             return View();
         }
 
-        public IActionResult Cadastrar()
+        public IActionResult Listar()
         {
-            return View();
-        }
 
-        /*private readonly IClienteRepositorio _clienteRepositorio;
+            List<ClienteModel> clientes = _clienteRepositorio.BuscarTodos();
+            return View(clientes);
+            
+        }            
+
+        private readonly IClienteRepositorio _clienteRepositorio;
         public ClienteController(IClienteRepositorio clienteRepositorio)
         {
             _clienteRepositorio = clienteRepositorio;
 
-        }
-
-        public IActionResult Index()
-        {
-            List<ClienteModel> clientes = _clienteRepositorio.BuscarTodos();
-            return View(clientes);
         }
 
         public IActionResult Cadastrar()
@@ -65,20 +63,22 @@ namespace PFC_VIBRANIUM_ERP.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(cliente);
+            return View("Index");          
+                       
         }
 
         [HttpPost]
         public IActionResult Alterar(ClienteModel cliente)
         {
             if (ModelState.IsValid)
-            {
+            {               
+
                 _clienteRepositorio.Atualizar(cliente);
 
                 return RedirectToAction("Index");               
             }
 
             return View("Alterar", cliente);
-        }*/
+        }
     }
 }

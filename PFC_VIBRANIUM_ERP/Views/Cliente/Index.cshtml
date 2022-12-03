@@ -1,6 +1,5 @@
-﻿@using PFC_VIBRANIUM_ERP.ViewModels
-
-@model ClienteViewModel
+﻿@*@using PFC_VIBRANIUM_ERP.ViewModels*@
+@model ClienteModel
 @{
     ViewData["Title"] = "Módulo de Clientes";
 }
@@ -19,74 +18,15 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
 
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#listaClientes" asp-controller="Cliente" asp-action="Listar">Listar Clientes</button>
+        <a class="btnbtn btn-info btn-lg" role="button" asp-controller="Cliente" asp-action="Listar"> Listar Clientes</a> 
+
     </div>
 
-    <br/>
+    <br/>    
 
 
-    <div class="modal modal-xl fade" id="listaClientes" role="dialog">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content modal-xl">
-                <div class="modal-header">
-                    <h4 class="modal-title">Clientes Cadastrados em Sistema</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body modal-xl modal-dialog-scrollable">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Razão</th>
-                            <th scope="col">País</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Tipo Pessoa</th>
-                            <th scope="col">Id Federal</th>
-                            <th scope="col">Nome Abreviado</th>
-                            <th scope="col">Tipo Recebimento</th>
-                            <th scope="col">Banco</th>
-                            <th scope="col">Agencia</th>
-                            <th scope="col">Conta</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @if (Model != null && Model.listaClientes.Any())
-                        {
-                            foreach (ClienteModel cliente in Model.listaClientes)
-                            {
-                                <tr>
-                                    <th scope="row">@cliente.idCli</th>
-                                    <td>@cliente.razao</td>
-                                    <td>@cliente.pais</td>
-                                    <td>@cliente.estado</td>
-                                    <td>@cliente.pessoa</td>
-                                    <td>@cliente.idfederal</td>
-                                    <td>@cliente.nome_abrev</td>
-                                    <td>@cliente.tipo_recebimento</td>
-                                    <td>@cliente.banco</td>
-                                    <td>@cliente.agencia</td>
-                                    <td>@cliente.conta</td>
-
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <a role="button" class="btn btn-primary" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Alterar">Alterar</a>
-                                            <a role="button" class="btn btn-danger" asp-route-id="@cliente.idCli" asp-controller="Cliente" asp-action="Excluir">Excluir</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            }
-                        }
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </div>
+
 
 <div class="modal modal-xl center fade" id="cadastrarCliente" role="dialog">
         <div class="modal-dialog modal-xl">
@@ -99,18 +39,18 @@
                     <div class="modal-body modal-xl modal-dialog-scrollable flex-column">
                         <div class="form-group">
                             <label for="nome">Nome do Cliente</label>
-                            <input type="text" asp-for="clienteModel.razao" class="form-control" placeholder="Digite o nome do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.razao)
+                            <input type="text" asp-for="razao" class="form-control" placeholder="Digite o nome do cliente">
+                            @Html.ValidationMessageFor(x => x.razao)
                         </div>
                         <div class="form-group">
                             <label for="pais">País</label>
-                            <input type="text" asp-for="clienteModel.pais" class="form-control" placeholder="Digite o País do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.pais)
+                            <input type="text" asp-for="pais" class="form-control" placeholder="Digite o País do cliente">
+                            @Html.ValidationMessageFor(x => x.pais)
                         </div>
                         <div class="form-group">
                             <label for="estado">Estado</label>
-                            <input type="text" asp-for="clienteModel.estado" class="form-control" placeholder="Digite o estado do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.estado)
+                            <input type="text" asp-for="estado" class="form-control" placeholder="Digite o estado do cliente">
+                            @Html.ValidationMessageFor(x => x.estado)
                         </div>
                         <div class="form-group">
                             <label for="pessoa">Tipo da pessoa</label>
@@ -121,39 +61,39 @@
                         </div>
                         <div class="form-group">
                             <label for="idfederal">Dados</label>
-                            <input type="text" asp-for="clienteModel.idfederal" class="form-control" placeholder="Digite o CPF ou CNPJ">
-                            @Html.ValidationMessageFor(x => x.clienteModel.idfederal)
+                            <input type="text" asp-for="idfederal" class="form-control" placeholder="Digite o CPF ou CNPJ">
+                            @Html.ValidationMessageFor(x => x.idfederal)
                         </div>
                         <div class="form-group">
                             <label for="abrev">Nome abreviado</label>
-                            <input type="text" asp-for="clienteModel.nome_abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.nome_abrev)
+                            <input type="text" asp-for="nome_abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
+                            @Html.ValidationMessageFor(x => x.nome_abrev)
                         </div>
 
                         <div class="form-group">
                             <label for="recebimento">Recebidos</label>
-                            <input type="text" asp-for="clienteModel.tipo_recebimento" class="form-control">
-                            @Html.ValidationMessageFor(x => x.clienteModel.tipo_recebimento)
+                            <input type="text" asp-for="tipo_recebimento" class="form-control">
+                            @Html.ValidationMessageFor(x => x.tipo_recebimento)
                         </div>
                         <div class="form-group">
                             <label for="banco">Banco</label>
-                            <input type="text" asp-for="clienteModel.banco" class="form-control" placeholder="Informe Banco do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.banco)
+                            <input type="text" asp-for="banco" class="form-control" placeholder="Informe Banco do cliente">
+                            @Html.ValidationMessageFor(x => x.banco)
                         </div>
                         <div class="form-group">
                             <label for="agencia">Agencia</label>
-                            <input type="text" asp-for="clienteModel.agencia" class="form-control" placeholder="Informe a Agencia do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.agencia)
+                            <input type="text" asp-for="agencia" class="form-control" placeholder="Informe a Agencia do cliente">
+                            @Html.ValidationMessageFor(x => x.agencia)
                         </div>
                         <div class="form-group">
                             <label for="conta">Conta</label>
-                            <input type="text" asp-for="clienteModel.conta" class="form-control" placeholder="Informe a conta do cliente">
-                            @Html.ValidationMessageFor(x => x.clienteModel.conta)
+                            <input type="text" asp-for="conta" class="form-control" placeholder="Informe a conta do cliente">
+                            @Html.ValidationMessageFor(x => x.conta)
                         </div>
                         <div class="form-group">
                             <label for="idEnd">Id Enderéço</label>
-                            <input type="text" asp-for="clienteModel.idEnd" class="form-control" placeholder="Informe a id de Endereço">
-                            @Html.ValidationMessageFor(x => x.clienteModel.idEnd)
+                            <input type="text" asp-for="idEnd" class="form-control" placeholder="Informe a id de Endereço">
+                            @Html.ValidationMessageFor(x => x.idEnd)
                         </div>
                     </div>
 

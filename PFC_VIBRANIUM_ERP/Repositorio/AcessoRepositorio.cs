@@ -65,9 +65,5 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
             return true;
         }
 
-        List<AcessoModel> IAcessoRepositorio.BuscarTodos()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

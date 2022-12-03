@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PFC_VIBRANIUM_ERP.Repositorio;
+using Microsoft.AspNetCore.Http;
 
 namespace PFC_VIBRANIUM_ERP
 {
@@ -31,8 +32,13 @@ namespace PFC_VIBRANIUM_ERP
 
             services.AddEntityFrameworkNpgsql().AddDbContext<BancoContext>(o => o.UseNpgsql(Configuration.GetConnectionString("DataBase")));
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
             services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
+
+            //services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
 
             /*services.AddScoped<ICAPRepositorio, CAPRepositorio>();
             services.AddScoped<ICARRepositorio, CARRepositorio>();
@@ -44,6 +50,11 @@ namespace PFC_VIBRANIUM_ERP
             services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();*/
 
+            services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

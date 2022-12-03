@@ -1,5 +1,8 @@
 ﻿using PFC_VIBRANIUM_ERP.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PFC_VIBRANIUM_ERP.Repositorio
     
@@ -8,11 +11,11 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
     {
         List<AcessoModel> BuscarTodos();
 
-        AcessoModel ListarPoId(int idCli);
+        AcessoModel ListarPoId(int idUsr);
 
-        AcessoModel Adicionar(AcessoModel cliente);
+        AcessoModel Adicionar(AcessoModel acesso);
 
-        AcessoModel Atualizar(AcessoModel cliente);
+        AcessoModel Atualizar(AcessoModel acesso);
 
         bool Apagar(int id);
 

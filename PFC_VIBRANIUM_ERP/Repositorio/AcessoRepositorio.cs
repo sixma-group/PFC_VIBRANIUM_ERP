@@ -3,6 +3,7 @@ using PFC_VIBRANIUM_ERP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PFC_VIBRANIUM_ERP.Repositorio
 {
@@ -38,7 +39,7 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
             AcessoModel acessoDB = ListarPoId(acesso.idUsr);
 
 
-            if (acessoDB == null) throw new Exception("Houve um erro na atualização do cliente!");
+            if (acessoDB == null) throw new Exception("Houve um erro na atualização do Acesso!");
 
             acessoDB.nome_user = acesso.nome_user;
             acessoDB.login = acesso.login;
@@ -57,7 +58,7 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
         {
             AcessoModel acessoDB = ListarPoId(id);
 
-            if (acessoDB == null) throw new Exception("Houve um erro na excluão do registro de cliente!");
+            if (acessoDB == null) throw new Exception("Houve um erro na excluão do registro de Acesso!");
             _bancoContext.Acesso.Remove(acessoDB);
             _bancoContext.SaveChanges();
 

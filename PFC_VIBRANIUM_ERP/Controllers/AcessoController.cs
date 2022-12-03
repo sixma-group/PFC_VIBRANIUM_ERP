@@ -18,15 +18,15 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         public IActionResult Listar()
         {
 
-            List<AcessoModel> clientes = _acessoRepositorio.BuscarTodos();
-            return View(clientes);
+            List<AcessoModel> acesso = _acessoRepositorio.BuscarTodos();
+            return View(acesso);
 
         }
 
         private readonly AcessoRepositorio _acessoRepositorio;
-        public AcessoController(AcessoRepositorio clienteRepositorio)
+        public AcessoController(AcessoRepositorio acessoRepositorio)
         {
-            _acessoRepositorio = clienteRepositorio;
+            _acessoRepositorio = acessoRepositorio;
 
         }
 
@@ -46,7 +46,7 @@ namespace PFC_VIBRANIUM_ERP.Controllers
             AcessoModel acesso = _acessoRepositorio.ListarPoId(id);
             return View(acesso);
         }
-        public IActionResult ExcluirCliente(int id)
+        public IActionResult ExcluirAcesso(int id)
         {
             _acessoRepositorio.Apagar(id);
             return RedirectToAction("Index");

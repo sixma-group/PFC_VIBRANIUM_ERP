@@ -9,7 +9,7 @@
 
 </div>
 
-<form asp-controller="Pedido" asp-action="Alterar" method="post">
+<form asp-controller="Comercial" asp-action="Alterar" method="post">
 
     <input type="hidden" asp-for="idPed"/>
     @Html.ValidationMessageFor(x => x.idPed)
@@ -53,5 +53,5 @@
 
 
     <button type="submit" class="btn btn-primary btn-block">Alterar</button>
-    <a class="btn btn-secondary btn-block" asp-controller="Pedido" asp-action="Index" role="button">Voltar</a>
+    <a class="btn btn-secondary btn-block" asp-controller="Comercial" asp-action="Index" role="button">Voltar</a>
 </form>

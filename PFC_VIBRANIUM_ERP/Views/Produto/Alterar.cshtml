@@ -40,6 +40,11 @@
         <input type="number" asp-for="preco_saida" class="form-control" placeholder="Digite o preço da venda">
         @Html.ValidationMessageFor(x => x.preco_saida)
     </div>
+    <div class="form-group">
+        <label for="Id Item">Id Item</label>
+        <input type="number" asp-for="idItem" class="form-control" placeholder="Digite os ids dos Itens">
+        @Html.ValidationMessageFor(x => x.idItem)
+    </div>
 
 
     <button type="submit" class="btn btn-primary btn-block">Alterar</button>

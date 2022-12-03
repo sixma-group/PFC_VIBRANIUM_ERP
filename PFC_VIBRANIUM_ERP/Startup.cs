@@ -43,14 +43,14 @@ namespace PFC_VIBRANIUM_ERP
             services.AddScoped<IEstoqueRepositorio, EstoqueRepositorio>();
             services.AddScoped<ICAPRepositorio, CAPRepositorio>();
             services.AddScoped<ICARRepositorio, CARRepositorio>();
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 
 
             /*
-            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
-                       
-            
+                                
             services.AddScoped<IOPRepositorio, OPRepositorio>();            
-            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();*/
+            */
 
             services.AddSession(o =>
             {

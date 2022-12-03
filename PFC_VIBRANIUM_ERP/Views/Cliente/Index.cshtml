@@ -1,5 +1,4 @@
-﻿@*@using PFC_VIBRANIUM_ERP.ViewModels*@
-@model ClienteModel
+﻿@model ClienteModel
 @{
     ViewData["Title"] = "Módulo de Clientes";
 }
@@ -8,25 +7,16 @@
     <h1 class="display-4"> Módulo de Clientes</h1>
     <br/>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        @* <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Cadastrar"> Cadastrar novo Cliente</a> *@
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarCliente">Cadastrar novo Cliente</button>  
-        
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">       
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cadastrarCliente">Cadastrar novo Cliente</button>          
     </div>
-
     <br/>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-
         <a class="btnbtn btn-info btn-lg" role="button" asp-controller="Cliente" asp-action="Listar"> Listar Clientes</a> 
-
     </div>
-
-    <br/>    
-
-
+    <br/>  
 </div>
-
 
 <div class="modal modal-xl center fade" id="cadastrarCliente" role="dialog">
         <div class="modal-dialog modal-xl">

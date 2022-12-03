@@ -36,6 +36,11 @@
             <option value="administrativo"> Administrativo</option>
         </select>
     </div>
+     <div class="form-group">
+        <label for="idFunc">ID Funcionario</label>
+        <input type="number" asp-for="idFunc" class="form-control" placeholder="Digite o id do Funcionario">
+        @Html.ValidationMessageFor(x => x.idFunc)
+    </div>
     
 
     <button type="submit" class="btn btn-primary btn-block">Alterar</button>

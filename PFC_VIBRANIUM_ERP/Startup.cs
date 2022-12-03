@@ -25,12 +25,14 @@ namespace PFC_VIBRANIUM_ERP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+            services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
+
             services.AddControllersWithViews();
 
             services.AddEntityFrameworkNpgsql().AddDbContext<BancoContext>(o => o.UseNpgsql(Configuration.GetConnectionString("DataBase")));
-
-            services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
-            services.AddScoped<IAcessoRepositorio, AcessoRepositorio>();
+                        
+            
 
             /*services.AddScoped<ICAPRepositorio, CAPRepositorio>();
             services.AddScoped<ICARRepositorio, CARRepositorio>();

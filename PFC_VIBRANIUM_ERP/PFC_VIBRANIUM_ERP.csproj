@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <None Include="Views\Acesso\Alterar.cshtml" />
-    <None Include="Views\Acesso\Cadastrar.cshtml" />
+    <None Include="Views\Acesso\Listar.cshtml" />
     <None Include="Views\Acesso\Excluir.cshtml" />
     <None Include="Views\Acesso\Index.cshtml" />
     <None Include="Views\Administrativo\CAP\Alterar.cshtml" />

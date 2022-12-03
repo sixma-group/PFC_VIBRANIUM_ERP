@@ -11,8 +11,8 @@
 
 <form asp-controller="Fornecedor" asp-action="Alterar" method="post">
 
-    <input type="hidden" asp-for="id"/>
-    @Html.ValidationMessageFor(x => x.idEnd)
+    <input type="hidden" asp-for="idForn"/>
+    @Html.ValidationMessageFor(x => x.idForn)
 
     <div class="form-group">
         <label for="nomefornecedor">Nome do Fornecedor</label>

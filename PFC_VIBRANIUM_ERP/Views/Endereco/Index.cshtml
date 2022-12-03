@@ -33,8 +33,9 @@
                             <option value="cliente"> Cliente</option>
                             <option value="fornecedor"> Fornecedor</option>
                             <option value="funcionario"> Funcionário</option>
+                            @Html.ValidationMessageFor(x => x.tipo)
                         </select>
-                        @Html.ValidationMessageFor(x => x.tipo)
+                        
                     </div>         
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
@@ -47,8 +48,14 @@
                         @Html.ValidationMessageFor(x => x.cep)
                     </div>
                     <div class="form-group">
+                        <label for="endereco">Descrição</label>
+                        <input type="text" asp-for="endereco" class="form-control" placeholder="Digite o endereço">
+                        @Html.ValidationMessageFor(x => x.endereco)
+                    </div>
+
+                    <div class="form-group">
                         <label for="numero">Número</label>
-                        <input type="number" asp-for="numero" class="form-control" placeholder="Digite o número do endereço">
+                        <input type="text" asp-for="numero" class="form-control" placeholder="Digite o número do endereço">
                         @Html.ValidationMessageFor(x => x.numero)
                     </div>
 

@@ -25,32 +25,32 @@ namespace PFC_VIBRANIUM_ERP.Repositorio
             return _bancoContext.Endereco.ToList();
         }
 
-        public EnderecoModel Adicionar(EnderecoModel endereco)
+        public EnderecoModel Adicionar(EnderecoModel enderecoa)
         {
             //Gravar no banco de dados
-            _bancoContext.Endereco.Add(endereco);
+            _bancoContext.Endereco.Add(enderecoa);
             _bancoContext.SaveChanges();
-            return endereco;
+            return enderecoa;
         }
 
-        public EnderecoModel Atualizar(EnderecoModel endereco)
+        public EnderecoModel Atualizar(EnderecoModel enderecoa)
         {
 
-            EnderecoModel enderecoDB = ListarPoId(endereco.idEnd);
+            EnderecoModel enderecoDB = ListarPoId(enderecoa.idEnd);
 
 
             if (enderecoDB == null) throw new Exception("Houve um erro na atualização do endereco!");
 
-            enderecoDB.tipo = endereco.tipo;
-            enderecoDB.descricao = endereco.descricao;
-            enderecoDB.cep = endereco.cep;
-            enderecoDB.endereco = endereco.endereco;
-            enderecoDB.numero = endereco.numero;
-            enderecoDB.bairro = endereco.bairro;
-            enderecoDB.cidade = endereco.cidade;
-            enderecoDB.contato = endereco.contato;
-            enderecoDB.telefone = endereco.telefone;
-            enderecoDB.email = endereco.email;
+            enderecoDB.tipo = enderecoa.tipo;
+            enderecoDB.descricao = enderecoa.descricao;
+            enderecoDB.cep = enderecoa.cep;
+            enderecoDB.endereco = enderecoa.endereco;
+            enderecoDB.numero = enderecoa.numero;
+            enderecoDB.bairro = enderecoa.bairro;
+            enderecoDB.cidade = enderecoa.cidade;
+            enderecoDB.contato = enderecoa.contato;
+            enderecoDB.telefone = enderecoa.telefone;
+            enderecoDB.email = enderecoa.email;
 
 
 

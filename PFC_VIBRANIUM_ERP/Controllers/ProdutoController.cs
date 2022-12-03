@@ -57,10 +57,13 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         [HttpPost]
         public IActionResult Cadastrar(ProdutoModel produto)
         {
+            Console.WriteLine(produto.preco_saida + " aaa " + produto.valor_aquisicao + " aaa "
+                + produto.descricao + " aaa " + produto.itens + " aaa " + produto.nome + " aaa " + produto.idItem + " aaa ");
+
             if (ModelState.IsValid)
             {
 
-                Console.WriteLine("dadossss  " +produto);
+                
                 _produtoRepositorio.Adicionar(produto);
 
                 return RedirectToAction("Index");
@@ -73,9 +76,11 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         [HttpPost]
         public IActionResult Alterar(ProdutoModel produto)
         {
+            
+
             if (ModelState.IsValid)
             {
-
+                
                 _produtoRepositorio.Atualizar(produto);
 
                 return RedirectToAction("Index");

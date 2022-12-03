@@ -38,14 +38,14 @@ namespace PFC_VIBRANIUM_ERP.Controllers
 
         public IActionResult Alterar(int id)
         {
-            EnderecoModel endereco = _enderecoRepositorio.ListarPoId(id);
-            return View(endereco);
+            EnderecoModel enderecos = _enderecoRepositorio.ListarPoId(id);
+            return View(enderecos);
         }
 
         public IActionResult Excluir(int id)
         {
-            EnderecoModel endereco = _enderecoRepositorio.ListarPoId(id);
-            return View(endereco);
+            EnderecoModel enderecos = _enderecoRepositorio.ListarPoId(id);
+            return View(enderecos);
         }
         public IActionResult ExcluirEndereco(int id)
         {
@@ -54,11 +54,13 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(EnderecoModel endereco) 
-        {
+        public IActionResult Cadastrar(EnderecoModel enderecos) 
+        {            
+
             if(ModelState.IsValid)
-            {
-                _enderecoRepositorio.Adicionar(endereco);
+            {               
+
+                _enderecoRepositorio.Adicionar(enderecos);
 
                 return RedirectToAction("Index");
             }
@@ -68,17 +70,17 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         }
 
         [HttpPost]
-        public IActionResult Alterar(EnderecoModel endereco)
+        public IActionResult Alterar(EnderecoModel enderecos)
         {
             if (ModelState.IsValid)
             {
 
-                _enderecoRepositorio.Atualizar(endereco);
+                _enderecoRepositorio.Atualizar(enderecos);
 
                 return RedirectToAction("Index");               
             }
 
-            return View("Alterar", endereco);
+            return View("Alterar", enderecos);
         }
     }
 }

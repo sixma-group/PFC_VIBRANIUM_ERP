@@ -31,11 +31,12 @@
                     <td>@login.login</td>
                     <td>@login.senha</td>
                     <td>@login.nivel</td>
+                    <td>@login.idFunc</td>
 
                     <td>
                         <div class="btn-group" role="group">
-                            <a role="button" class="btn btn-primary" asp-route-id="@login.idUsr" asp-controller="Login" asp-action="Alterar">Alterar</a>
-                            <a role="button" class="btn btn-danger" asp-route-id="@login.idUsr" asp-controller="Login" asp-action="Excluir">Excluir</a>
+                            <a role="button" class="btn btn-primary" asp-route-id="@login.idUsr" asp-controller="Acesso" asp-action="Alterar">Alterar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@login.idUsr" asp-controller="Acesso" asp-action="Excluir">Excluir</a>
                         </div>
                     </td>
                 </tr>

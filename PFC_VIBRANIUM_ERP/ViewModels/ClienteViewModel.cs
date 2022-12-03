@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using PFC_VIBRANIUM_ERP.Models;
+using System.Collections.Generic;
 
-namespace PFC_VIBRANIUM_ERP.Models
+namespace PFC_VIBRANIUM_ERP.ViewModels
 {
     public class ClienteViewModel
     {

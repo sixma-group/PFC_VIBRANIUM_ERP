@@ -12,8 +12,8 @@
 <form asp-controller="Cliente" asp-action="Cadastrar" method="post">
     <div class="form-group">
         <label for="nome">Nome do Cliente</label>
-        <input type="text" asp-for="nome" class="form-control" placeholder="Digite o nome do cliente">
-        @Html.ValidationMessageFor(x => x.nome)
+        <input type="text" asp-for="razao" class="form-control" placeholder="Digite o nome do cliente">
+        @Html.ValidationMessageFor(x => x.razao)
     </div>
     <div class="form-group">
         <label for="pais">País</label>
@@ -40,16 +40,16 @@
     </div>
     <div class="form-group">
         <label for="abrev">Nome abreviado</label>
-        <input type="text" asp-for="abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
-        @Html.ValidationMessageFor(x => x.abrev)
+        <input type="text" asp-for="nome_abrev" class="form-control" placeholder="Digite o nome abreviado do cliente">
+        @Html.ValidationMessageFor(x => x.nome_abrev)
     </div>
 
    
 
     <div class="form-group">
         <label for="recebimento">Forma de Pagamento</label>
-        <input type="text" asp-for="recebimento" class="form-control">
-        @Html.ValidationMessageFor(x => x.recebimento)
+        <input type="text" asp-for="tipo_recebimento" class="form-control">
+        @Html.ValidationMessageFor(x => x.tipo_recebimento)
     </div>
     <div class="form-group">
         <label for="banco">Banco</label>

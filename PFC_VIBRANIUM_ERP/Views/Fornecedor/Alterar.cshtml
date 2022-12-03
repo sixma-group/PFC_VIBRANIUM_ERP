@@ -15,8 +15,8 @@
 
     <div class="form-group">
         <label for="nomefornecedor">Nome do Fornecedor</label>
-        <input type="text" asp-for="nomefornecedor" class="form-control" placeholder="Digite o nome do fornecedor">
-        @Html.ValidationMessageFor(x => x.nomefornecedor)
+        <input type="text" asp-for="razao" class="form-control" placeholder="Digite o nome do fornecedor">
+        @Html.ValidationMessageFor(x => x.razao)
     </div>
     <div class="form-group">
         <label for="pais">País</label>
@@ -43,15 +43,15 @@
     </div>
     <div class="form-group">
         <label for="abrev">Nome abreviado</label>
-        <input type="text" asp-for="abrev" class="form-control" placeholder="Digite o nome abreviado do fornecedor">
-        @Html.ValidationMessageFor(x => x.abrev)
+        <input type="text" asp-for="nome_abrev" class="form-control" placeholder="Digite o nome abreviado do fornecedor">
+        @Html.ValidationMessageFor(x => x.nome_abrev)
     </div>
 
 
     <div class="form-group">
         <label for="pagamento">Forma de Pagamento</label>
-        <input type="text" asp-for="pagamento" class="form-control">
-        @Html.ValidationMessageFor(x => x.pagamento)
+        <input type="text" asp-for="tipo_pagamento" class="form-control">
+        @Html.ValidationMessageFor(x => x.tipo_pagamento)
     </div>
     <div class="form-group">
         <label for="banco">Banco</label>

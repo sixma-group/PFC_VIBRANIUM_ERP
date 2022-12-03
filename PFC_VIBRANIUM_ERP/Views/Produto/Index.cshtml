@@ -32,18 +32,20 @@
                 foreach (ProdutoModel produto in Model)
                 {
             <tr>
-                <th scope="row">@produto.id</th>
+                <th scope="row">@produto.idProd</th>
                 <td>@produto.nome</td>
-                <td>@produto.preco</td>
-                <td>@produto.item</td>
-                <td>@produto.estoque</td>
+                <td>@produto.idItem</td>
+                <td>@produto.valor_aquisicao</td>
+                <td>@produto.preco_saida</td>
+                <td>@produto.item</td>                
                 <td>@produto.descricao</td>
-                <td>@produto.aquisicao</td>
+                
+                
 
                 <td>
                     <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-route-id="@produto.id" asp-controller="Produto" asp-action="Alterar">Alterar</a>
-                        <a role="button" class="btn btn-danger" asp-route-id="@produto.id" asp-controller="Produto" asp-action="Excluir">Excluir</a>
+                        <a role="button" class="btn btn-primary" asp-route-id="@produto.idItem" asp-controller="Produto" asp-action="Alterar">Alterar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@produto.idItem" asp-controller="Produto" asp-action="Excluir">Excluir</a>
                     </div>
                 </td>
             </tr>

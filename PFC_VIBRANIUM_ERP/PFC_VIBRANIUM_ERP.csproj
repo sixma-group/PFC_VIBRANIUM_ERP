@@ -1,32 +1,77 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Acesso\Alterar.cshtml" />
+    <None Include="Views\Acesso\Cadastrar.cshtml" />
+    <None Include="Views\Acesso\Excluir.cshtml" />
+    <None Include="Views\Acesso\Index.cshtml" />
+    <None Include="Views\Administrativo\CAP\Alterar.cshtml" />
+    <None Include="Views\Administrativo\CAP\Cadastrar.cshtml" />
+    <None Include="Views\Administrativo\CAP\Excluir.cshtml" />
+    <None Include="Views\Administrativo\CAP\Index.cshtml" />
+    <None Include="Views\Administrativo\CAR\Alterar.cshtml" />
+    <None Include="Views\Administrativo\CAR\Cadastrar.cshtml" />
+    <None Include="Views\Administrativo\CAR\Excluir.cshtml" />
+    <None Include="Views\Administrativo\CAR\Index.cshtml" />
+    <None Include="Views\Administrativo\Index.cshtml" />
+    <None Include="Views\Cliente\Alterar.cshtml" />
+    <None Include="Views\Cliente\Cadastrar.cshtml" />
+    <None Include="Views\Cliente\Excluir.cshtml" />
+    <None Include="Views\Cliente\Index.cshtml" />
+    <None Include="Views\Comercial\Alterar.cshtml" />
+    <None Include="Views\Comercial\Cadastrar.cshtml" />
+    <None Include="Views\Comercial\Excluir.cshtml" />
+    <None Include="Views\Comercial\Index.cshtml" />
+    <None Include="Views\Endereco\Alterar.cshtml" />
+    <None Include="Views\Endereco\Cadastrar.cshtml" />
+    <None Include="Views\Endereco\Excluir.cshtml" />
+    <None Include="Views\Endereco\Index.cshtml" />
+    <None Include="Views\Estoque\Alterar.cshtml" />
+    <None Include="Views\Estoque\Cadastrar.cshtml" />
+    <None Include="Views\Estoque\Excluir.cshtml" />
+    <None Include="Views\Estoque\Index.cshtml" />
+    <None Include="Views\Fornecedor\Alterar.cshtml" />
+    <None Include="Views\Fornecedor\Cadastrar.cshtml" />
+    <None Include="Views\Fornecedor\Excluir.cshtml" />
+    <None Include="Views\Fornecedor\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\OP\Alterar.cshtml" />
+    <None Include="Views\OP\Cadastrar.cshtml" />
+    <None Include="Views\OP\Excluir.cshtml" />
+    <None Include="Views\OP\Index.cshtml" />
+    <None Include="Views\Produto\Alterar.cshtml" />
+    <None Include="Views\Produto\Cadastrar.cshtml" />
+    <None Include="Views\Produto\Excluir.cshtml" />
+    <None Include="Views\Produto\Index.cshtml" />
+    <None Include="Views\RH\Alterar.cshtml" />
+    <None Include="Views\RH\Cadastrar.cshtml" />
+    <None Include="Views\RH\Excluir.cshtml" />
+    <None Include="Views\RH\Index.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework6.Npgsql" Version="6.4.0" />
+    <PackageReference Include="EntityFramework6.Npgsql" Version="6.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.14">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.14">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Npgsql" Version="5.0.10" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+    <PackageReference Include="Npgsql" Version="7.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

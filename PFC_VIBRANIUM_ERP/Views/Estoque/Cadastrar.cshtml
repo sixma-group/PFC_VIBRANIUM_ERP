@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         <label for="preco">Preço</label>
-        <input type="text" asp-for="preco" class="form-control" placeholder="Digite o preço do estoque">
+        <input type="double" asp-for="preco" class="form-control" placeholder="Digite o preço do estoque">
         @Html.ValidationMessageFor(x => x.preco)
     </div>
     <div class="form-group">
@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
         <label for="quantidade">Quantidade</label>
-        <input type="text" asp-for="quantidade" class="form-control" placeholder="Digite a quantidade">
+        <input type="int" asp-for="quantidade" class="form-control" placeholder="Digite a quantidade">
         @Html.ValidationMessageFor(x => x.quantidade)
     </div>
 

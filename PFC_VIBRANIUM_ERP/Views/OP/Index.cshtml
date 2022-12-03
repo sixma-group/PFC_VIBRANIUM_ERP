@@ -32,8 +32,8 @@
                 foreach (OPModel OP in Model)
                 {
                     <tr>
-                        <th scope="row">@OP.id</th>
-                        <td>@OP.idItem</td>
+                        <th scope="row">@OP.idOp</th>
+                        <td>@OP.idProd</td>
                         <td>@OP.quantidade</td>
                         <td>@OP.status</td>
                         <td>@OP.descricao</td>
@@ -43,8 +43,8 @@
 
                         <td>
                             <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-primary" asp-route-id="@OP.id" asp-controller="OP" asp-action="Alterar">Alterar</a>
-                                <a role="button" class="btn btn-danger" asp-route-id="@OP.id" asp-controller="OP" asp-action="Excluir">Excluir</a>
+                                <a role="button" class="btn btn-primary" asp-route-id="@OP.idOp" asp-controller="OP" asp-action="Alterar">Alterar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@OP.idOp" asp-controller="OP" asp-action="Excluir">Excluir</a>
                             </div>
                         </td>
                     </tr>

@@ -5,9 +5,9 @@
 
 <div class="text-center">
 
-    <h3>Realmente deseja excluir o endereco? (@Model.tipo)</h3>
+    <h3>Realmente deseja excluir o endereco? (@Model.idEnd)</h3>
 
 </div>
 
 <a class="btn btn-primary btn-block" role="button" asp-controller="Endereco" asp-action="Index">Cancelar Exclusão </a>
-<a class="btn btn-danger btn-block" role="button" asp-controller="Endereco" asp-action="ExcluirEndereco" asp-route-id="@Model.id">Confirmar Exclusão </a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="Endereco" asp-action="ExcluirEndereco" asp-route-id="@Model.idEnd">Confirmar Exclusão </a>

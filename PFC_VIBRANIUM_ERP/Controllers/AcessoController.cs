@@ -23,8 +23,8 @@ namespace PFC_VIBRANIUM_ERP.Controllers
 
         }
 
-        private readonly AcessoRepositorio _acessoRepositorio;
-        public AcessoController(AcessoRepositorio acessoRepositorio)
+        private readonly  IAcessoRepositorio _acessoRepositorio;
+        public AcessoController(IAcessoRepositorio acessoRepositorio)
         {
             _acessoRepositorio = acessoRepositorio;
 

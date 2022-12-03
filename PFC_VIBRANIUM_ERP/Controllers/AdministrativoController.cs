@@ -50,9 +50,11 @@ namespace PFC_VIBRANIUM_ERP.Controllers
         }
 
         private readonly ICAPRepositorio _capRepositorio;
-        public AdministrativoController(ICAPRepositorio capRepositorio)
+        private readonly ICARRepositorio _carRepositorio;
+        public AdministrativoController(ICAPRepositorio capRepositorio, ICARRepositorio carRepositorio)
         {
             _capRepositorio = capRepositorio;
+            _carRepositorio = carRepositorio;
 
         }
 
@@ -109,13 +111,6 @@ namespace PFC_VIBRANIUM_ERP.Controllers
 
             List<CARModel> tituloscar = _carRepositorio.BuscarTodos();
             return View(tituloscar);
-
-        }
-
-        private readonly ICARRepositorio _carRepositorio;
-        public AdministrativoController(ICARRepositorio carRepositorio)
-        {
-            _carRepositorio = carRepositorio;
 
         }
 
